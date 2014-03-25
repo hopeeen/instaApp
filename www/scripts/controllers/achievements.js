@@ -7,7 +7,7 @@
 
 angular.module('sqsWebClientApp')
         .controller('CreateSubjectCtrl', function($scope, dummyData, Accounts) {
-            
+        $scope.test="nkjk";    
         $scope.achievementcollector = Accounts.getAchievements();
 
         $scope.showMA = True;
