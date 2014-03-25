@@ -1,19 +1,21 @@
-<!--    
-<div ng-controller="poicontroller"/>
--->  
+
+
+
 <table>
     <thead>
+        <link rel="stylesheet" type="text/css" href="../css/pointofinterest.css" />
+
       <tr><th colspan="4">Point of interest</th></tr>
     </thead>
     <tbody>
-    <li ng-repeat="interests in interests2">
+    <li class="poilist" ng-repeat="interests in interests">
         
   {{interests.interestRating}}
   {{interests.interestName}}
   {{interests.interestLocation}}
     </li>
     
-    <div>  {{tull}}</div>
+   
         
         <td>
             <!--
