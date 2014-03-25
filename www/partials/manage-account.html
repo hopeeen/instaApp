@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="appen">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Manage account</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="../css/manage-account.css" />
+    <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" data-semver="1.0.7"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script type="text/javascript" src="../scripts/controllers/manage-account.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+      
+      <ul>
+          
+          
+          <li ng-click="showname = !showname">Change name</li>
+          <li ng-hide="showname">
+          <label class="manage-label">Name:</label>
+      <input type="text" ng-model="name"></li>
+          
+          <li ng-click="showemail = !showemail">Change email</li>
+          <li ng-hide="showemail">
+      
+      <label class="manage-label">E-mail:</label>
+      <input type="text" ng-model="email">
+              
+          </li>
+      
+          
+          <li ng-click="showdesc = !showdesc">Change description</li>
+          <li ng-hide="showdesc">
+              
+              <textarea class="manage-textarea" ng-model="description"></textarea>
+          </li>
+          
+          <li ng-click="shownewp = !shownewp">Change password</li>
+          <li ng-hide="shownewp">
+              
+              <label class="manage-label">New password:</label><input type="text" ng-model="newpassword"/></br>
+              <label class="manage-label">Old password:</label><input type="text" ng-model="oldpassword"/>
+              
+              
+          </li>
+      </ul>
+      
+      
+      <button ng-click="pushbutton()">Test</button>
+      
+      <div ng-app="app">
+          
+          <div ng-controller="validation">
+              
+          </div>
+          
+      </div>
+      
+      
+    <!--
+    <a ng-href='#here' ng-click='go("test")' >click me</a>
+    <a ng-click='getItem()' href='' >Get From Service {{msg}}</a>
+    <div style='height:1000px'>
+      
+      <a id='here'></a>
+     
+    </div>
+     <h1>here</h1>
+    -->
+  </body>
+
+</html>
