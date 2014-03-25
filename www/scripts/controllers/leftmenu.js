@@ -1,8 +1,8 @@
-'use strict';
 
-app.controller('leftmenucontroller', function($scope, dummyData, sqsAccounts, sqsSubjects) {
+app.controller('leftmenucontroller', function($scope, dummyData) {
         
-        $scope.toll="ahaha";
+        $scope.sjekk="haha";
+        
         $scope.ShowSignIn = false;
                 $Scope.DisplaySignIn = function() {
                 $scope.ShowSignIn = true;
