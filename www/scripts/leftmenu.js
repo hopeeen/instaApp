@@ -1,7 +1,4 @@
-'use strict';
-
-angular.module('sqsWebClientApp')
-        .controller('CreateSubjectCtrl', function($scope, dummyData, sqsAccounts, sqsSubjects) {
+app.controller('leftmenucontroller', function($scope, dummyData, sqsAccounts, sqsSubjects) {
 
         $scope.ShowSignIn = false;
                 $Scope.DisplaySignIn = function() {

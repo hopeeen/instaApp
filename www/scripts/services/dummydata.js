@@ -1,6 +1,4 @@
-'use strict';
-angular.module('istanbulApp')
-        .factory('dummyData', function() {
+        app.factory('dummyData', function() {
 
             return {
                 getSubjects: function() {

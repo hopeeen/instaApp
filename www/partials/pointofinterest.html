@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Point of interest</title>
-  <script src="../lib/angular/angular.js"></script>
-  <script src="../lib/angular/angular-route.js"></script>
-  <script type="text/css" src="../css/app.css"></script>
-  <script type="text/javascript" src="../controllers/pointofinterest.js"></script>
-  <script type="text/javascript" src="../services/services.js"></script>
-</head>
-    <div ng-app="appen" ng-controller="poicontroller"/>
+    <div ng-controller="poicontroller"/>
   <table>
     <thead>
       <tr><th colspan="4">Point of interest</th></tr>
@@ -27,11 +11,10 @@ and open the template in the editor.
           <img src="../img/flags/{{driver.Driver.nationality}}.png" />
             -->
             <img src="../img/logo.png" />
-            {{interests.interestLocation}}&nbsp;<br>{{interests.interestRating}}
+            <br>{{interests.interestRating}}
         </td>
-        <td>{{interests.interestName}}</td>
+        <td>{{interests.interestName}} &nbsp; {{interests.interestLocation}}</td>
       </tr>
     </tbody>
   </table>
 
-</html>

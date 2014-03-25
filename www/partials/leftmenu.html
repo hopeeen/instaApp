@@ -6,66 +6,67 @@ and open the template in the editor.
 -->
 <link rel="stylesheet" type="text/css" href="../css/app.css" />
 <link rel="stylesheet" type="text/css" href="../css/LeftMenu.css" />
+<script type="text/javascript" language="javascript" src="../scripts/leftmenu"></script>
 
-<Div class="LeftMenu">
+<Div class="LeftMenu" ng-controller="leftmenucontroller">
     
-    
-    <Div class="Menu">
-      
-       
+
+    <div class="Menu">
+
+
         <ul style="list-style: none;"> 
-            
+
             <li ng-href="url">Point of interest</li>
             <li ng-href="url">Routes</LI>
             <li ng-href="url">Camera feedback</LI>
             <li ng-href="url">Help</LI>
             <li ng-href="url">Notifications</LI>
-        </UL>
-                
-            
+        </ul>
+
+
     </Div> 
-    
-       
-        
-         <Div class="SignUp"> 
+
+
+
+    <Div class="SignUp"> 
         Sign Up
         <table>
             <tr>    
                 <td ng-click="" name="FacebookConnection"><img src="../img/fbpic"/> </td> 
                 <td ng-click="" name="CreateAccount"><img src="../img/mailpic"/></td>
             </tr> 
-        
+
         </table>
-        
-      
-         
-   
-        
-         <BUTTON class="topcoat-button--large--cta" ng-click="DisplaySignIn()">Sign In</BUTTON>  
-        
-    
+
+
+
+
+
+        <BUTTON class="topcoat-button--large--cta" ng-click="DisplaySignIn()">Sign In</BUTTON>  
+
+
     </DIV>'
-        
-         
-   
-    
+
+
+
+
     <div class="ng-modal" ng-show="ShowSignIn">
         <div class="ng-modal-overlay"ng-click="hideModal()"></div>
         <div class="ng-modal-dialog" ng-style="dialogStyle">
             <div class="ng-modal-close" ng-click="hideModal()"></div>
             <div class="ng-modal-dialog-content" ng-transclude></div>
-            
+
         </div>
-            
+
     </div>
-        
-      
-         
-        
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
 </Div>
 

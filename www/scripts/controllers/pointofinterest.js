@@ -1,4 +1,4 @@
-App.controller('poicontroller', function($scope, dummyData, sqsAccounts, sqsSubjects, interests) {
+App.controller('poicontroller', function($scope, dummyData) {
             
                     $scope.interestArray = dummyData.getInterest();
 

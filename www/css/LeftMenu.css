@@ -15,19 +15,20 @@ and open the template in the editor.
     height: 100%;  
 }
 
-.Menu {
-    border:#666666;
-    width: 75%;
-    background-color: #666666;
+
+
+.Menu ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.Menu ul li  {
     color:#47D1FF;
-    
-      
-        
-    
-     
-    
+    border-bottom: 3px white solid;
     
 }
+
 
 
 
@@ -35,11 +36,12 @@ and open the template in the editor.
     border:#666666;
     width: 75%; 
     background-color: #666666;   
-        
+
 }
 
 .SignUp table tr td img{
     max-width: 35px;
     position: relative;
     border-color: white;
+
 }
