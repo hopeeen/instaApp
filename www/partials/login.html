@@ -1,9 +1,11 @@
-<h3> Login view </h3>
+<div class="loginWrapper">
+    <h3> Login view </h3>
 
-<div>Status: {{status}}</div><br>
+    <form ng-submit="login()">
+        <input ng-model="username" type="text" placeholder="Username" autofocus>
+        <input ng-model="password" type="password" placeholder="Password">
+        <input type="submit" value="Login" ng-disabled="!username || !password">
+    </form>
 
-<form ng-submit="login()">
-  <input ng-model="username" type="text" placeholder="Username" autofocus>
-  <input ng-model="password" type="password" placeholder="Password">
-  <input type="submit" value="Login" ng-disabled="!username || !password">
-</form>
+    <div>Status: {{status}}</div>
+</div>
