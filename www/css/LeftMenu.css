@@ -26,6 +26,9 @@ and open the template in the editor.
 .Menu ul li  {
     color:#47D1FF;
     border-bottom: 1px white solid;
+    margin:5%;
+    padding:5%; 
+        
     
 }
 
