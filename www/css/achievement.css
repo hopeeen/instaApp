@@ -24,29 +24,34 @@ margin: 0 auto;
 padding: 1px;
 }
 
-div.List-element{
+div.List-element{}
 
-}
 
 div.column-1{
+float:left;
 position: relative;
 top: auto;
 left: 0px;
 width: auto;
+background-color:yellow;
 }
 
 div.column-2{
+float:left;
 position: relative;
 top: auto;
 left:30px;
 width: auto;
+background-color:green;
 }
 
 div.column-3{
+float:left;
 position: relative;
 top: auto;
 left: 130px;
 width: auto;
+background-color:greenyellow;
 }
 
 div.bottom{

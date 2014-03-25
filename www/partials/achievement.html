@@ -8,104 +8,106 @@ and open the template in the editor.
     <link rel="stylesheet" type="text/css" href="../css/achievement.css" />
     <script type="text/javascript" language="javascript" src="../scripts/achievements.js"></script>
 </head>
-
-<div class="topbar">
-    <div class="topcoat-button-bar">
-        <div class="topcoat-button-bar__item">
-            <button class="topcoat-button-bar__button--large">My Achievements</button>
-        </div>
-        <div class="topcoat-button-bar__item">
-            <button class="topcoat-button-bar__button--large">List of <br>Achievements</button>
-        </div>
-        <div class="topcoat-button-bar__item">
-            <button class="topcoat-button-bar__button--large">Leaderboard</button>
-        </div>
-    </div>
-</div>
-
-<div class="tabContent" id="myachievements" ng-show="showMA">
-
-    <h1>My achievements</h1>
-
-    <div class="container" ng-repeat="achievements in achievement">
-        <div class="list-element">
-            <div class="column-1">
-                <img src="../img/{done}.png">
+<body>
+    <div class="topbar">
+        <div class="topcoat-button-bar">
+            <div class="topcoat-button-bar__item">
+                <button class="topcoat-button-bar__button--large">My Achievements</button>
             </div>
-            <div class="column-2">
-                {{achievement.name}}
+            <div class="topcoat-button-bar__item">
+                <button class="topcoat-button-bar__button--large">List of <br>Achievements</button>
             </div>
-            <div class="column-3">
-                {{achievement.points}}
-            </div>
-
-            <div class="bottom">
-
-                <div class="totpoints">
-                    <b>
-                        Total points
-                    </b>
-                </div>
-
-                <div class="totalpoints">
-                    {{achievements.mytotalpoints}}
-                </div>
+            <div class="topcoat-button-bar__item">
+                <button class="topcoat-button-bar__button--large">Leaderboard</button>
             </div>
         </div>
     </div>
 
-</div>
+    <div class="tabContent" id="myachievements" ng-show="showMA">
 
-<div class="tabContent" id="listofachievements" ng-show="showLOA">
+        <h1>My achievements</h1>
 
-    <h1>List of Achievements</h1>
-    <div class="container" ng-repeat="achievements in achievement">
-        <div class="list-element">
-            <div class="column-1">
-                <img src="../img/{done}.png">
-            </div>
-            <div class="column-2">
-
-                <b>
+        <div class="container" ng-repeat="achievements in achievement">
+            <div class="list-element">
+                <div class="column-1">
+                    <img src="../img/{done}.png">
+                </div>
+                <div class="column-2">
                     {{achievement.name}}
-                </b>
-                <br>
-                {{achievement.description}}
+                </div>
+                <div class="column-3">
+                    {{achievement.points}}
+                </div>
+
+                <div class="bottom">
+
+                    <div class="totpoints">
+                        <b>
+                            Total points
+                        </b>
+                    </div>
+
+                    <div class="totalpoints">
+                        {{achievements.mytotalpoints}}
+                    </div>
+                </div>
             </div>
-            <div class="column-3">
-                {{achievement.points}}
+        </div>
+
+    </div>
+
+    <div class="tabContent" id="listofachievements" ng-show="showLOA">
+
+        <h1>List of Achievements</h1>
+        <div class="container" ng-repeat="achievements in achievement">
+            <div class="list-element">
+                <div class="column-1">
+                    <img src="../img/{done}.png">
+                </div>
+                <div class="column-2">
+
+                    <b>
+                        {{achievement.name}}
+                    </b>
+                    <br>
+                    {{achievement.description}}
+                </div>
+                <div class="column-3">
+                    {{achievement.points}}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="tabContent" id="leaderboard" ng-show="showLeaderboard">
+    <div class="tabContent" id="leaderboard" ng-show="showLeaderboard">
 
-    <h1>Leaderboard</h1>
-    <div class="container" ng-repeat="achievements in achievement">
-        <div class="list-element">
-            <div class="column-1">
-                /* bilde av brukeren*/
-            </div>
-            <div class="column-2">
-                {{achievements.username}}
-            </div>
-            <div class="column-3">
-                {{achievements.totalpoints}}
-            </div>
-
-            <div class="bottom">
+        <h1>Leaderboard</h1>
+        <div class="container" ng-repeat="achievements in achievement">
+            <div class="list-element">
                 <div class="column-1">
                     /* bilde av brukeren*/
                 </div>
                 <div class="column-2">
-                    {{achievements.myusername}}
+                    {{achievements.username}}
                 </div>
                 <div class="column-3">
-                    {{achievements.mytotalpoints}}
+                    {{achievements.totalpoints}}
                 </div>
-            </div>
 
+                <div class="bottom">
+                    <div class="column-1">
+                        /* bilde av brukeren*/
+                    </div>
+                    <div class="column-2">
+                        {{achievements.myusername}}
+                    </div>
+                    <div class="column-3">
+                        {{achievements.mytotalpoints}}
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
+    <input type="text" ng-model="test">
+</body>
