@@ -4,7 +4,7 @@
 <table>
     <thead>
         <link rel="stylesheet" type="text/css" href="../css/pointofinterest.css" />
-
+        <title>Point of interest</title>
       <tr><th colspan="4">Point of interest</th></tr>
     </thead>
     <tbody>
@@ -13,17 +13,17 @@
        <!--            <img src="./img/logo.png" /><br>
        -->
   <img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/>     
-  {{interests.interestRating}}
-  {{interests.interestName}}
-  {{interests.interestLocation}}
-  {{interests.imgname}}
+  
+  {{interests.interestName}} /
+  {{interests.interestLocation}}<br>
+  <b>Rating:</b>{{interests.interestRating}}
 
         </div>
         <td>
         
-            <b> Rating:</b> {{interests.interestRating}}
+        
         </td>
-        <td>{{interests.interestName}} &nbsp; {{interests.interestLocation}}</td>
+        
       </tr>
     </tbody>
   </table>
