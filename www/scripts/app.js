@@ -26,4 +26,7 @@ app.constant('REST', {
     'path': '/CustomerAppClientServerAuthServlet/resources/'
 });
 
+app.service('daoUser', function($injector) {
+  return $injector.get('daoUser.js');
+});
 
