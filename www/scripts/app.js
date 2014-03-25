@@ -16,7 +16,8 @@ angular.module('myApp', [
                 $routeProvider.when('/create-account', {templateUrl: 'partials/create-account.html', controller: 'create-accountController'});
                 $routeProvider.when('/achievements', {templateUrl: 'partials/achievements.html', controller: 'achievementsController'});
                 $routeProvider.when('/left-menu', {templateUrl: 'partials/left-menu.html', controller: 'left-menuController'});
-
+                $routeProvider.when('/pointofinterest', {templateUrl: 'partials/pointofinterest.html', controller: 'poicontroller'});
+    
                 $routeProvider.otherwise({redirectTo: '/404'});
             }]);
 
