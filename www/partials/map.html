@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html ng-app="IstanbulApp">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/maps.css" />
+     <!--   <script>document.write('<base href="' + document.location + '" />');</script> -->
+
+        <script type="text/javascript" src="../scripts/controllers/maps.js"></script>
+        <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" data-semver="1.0.7"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRyJaHnTAU2eAPxEcQaV2c6qWC7vbEJ6s&sensor=false"></script>
+        <script type="text/javascript" src="../scripts/directives/angular-google-maps-min.js"></script>
+        <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+    </head>
+
+    <body ng-controller='MapsCTRL'>
+
+    <google-map  center="map.center" zoom="map.zoom"></google-map>
+    <div id="map-canvas"></div> 
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
