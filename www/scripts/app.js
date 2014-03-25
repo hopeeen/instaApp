@@ -30,3 +30,7 @@ app.service('daoUser', function($injector) {
   return $injector.get('daoUser.js');
 });
 
+app.service('dummyData', function($injector) {
+  return $injector.get('dummydata.js');
+});
+
