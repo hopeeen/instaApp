@@ -3,9 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('MainCtrl', [function() {
+  controller('LoginController', [function() {
 
   }])
-  .controller('CreateSubjectCtrl', [function() {
+  .controller('manageAccountCTRL', [function() {
 
   }]);
