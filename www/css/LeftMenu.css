@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25.mar.2014, 09:46:08
+    Author     : Caroline
+*/
+
+.LeftMenu{
+    border:#666666;
+    width: 75%;
+    background-color: #666666;
+    height: 100%;  
+}
+
+.Menu {
+    border:#666666;
+    width: 75%;
+    background-color: #666666;
+    color:#47D1FF;
+    
+      
+        
+    
+     
+    
+    
+}
+
+
+
+.SignUp {
+    border:#666666;
+    width: 75%; 
+    background-color: #666666;   
+        
+}
+
+.SignUp table tr td img{
+    max-width: 35px;
+    position: relative;
+    border-color: white;
+}
