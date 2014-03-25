@@ -1,9 +1,12 @@
-App.controller('poicontroller', function($scope, dummyData) {
+app.controller('poicontroller', function($scope, dummyData) {
             
                     $scope.interests = dummyData.getInterest();
                     
                     
-                    var interests2 = [{
+                   $scope.tull = "heheheh";
+                    
+                    
+                    $scope.interests2 = [{
                             interestName: 'Blue Moske',
                             interestLocation: 'Istanbul',
                             interestRating: '5.0'

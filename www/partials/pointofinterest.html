@@ -1,13 +1,19 @@
-    <div ng-controller="poicontroller"/>
-  <table>
+<!--    
+<div ng-controller="poicontroller"/>
+-->  
+<table>
     <thead>
       <tr><th colspan="4">Point of interest</th></tr>
     </thead>
     <tbody>
-    <li ng-repeat="interests in interests">
+    <li ng-repeat="interests in interests2">
+        
   {{interests.interestRating}}
+  {{interests.interestName}}
+  {{interests.interestLocation}}
     </li>
-      
+    
+    <div>  {{tull}}</div>
         
         <td>
             <!--
