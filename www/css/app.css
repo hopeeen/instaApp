@@ -7,11 +7,30 @@
 @import url('./topcoat/topcoat-desktop-light.css'); 
 @import url('./topcoat/topcoat-desktop-light.min.css'); 
 
+
+/* 1. RESETS */
+input[type="checkbox"]:hover {cursor: pointer;}
+
+
+
+/* 2. GENERAL TAGS */
+.clear-both {clear: both;}
+.text-align-left {text-align: left; display:inline;}
+.text-align-right {text-align: right; display:inline;}
+.horizontal-separator {border-top: 1px solid #0076bb;}
+.hidden {visibility: hidden;}
+.removed {display: none;}
+
+
+
+/* 3. FONTS AND GENERAL COLORS */
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
+  margin:0;
   padding: 0 0 0.5em;
+  background-color: white;
 }
 
 .menu:before {
@@ -20,6 +39,7 @@
 
 .menu:after {
   content: "]";
+  margin:0;
 }
 
 .menu > li {
@@ -46,28 +66,17 @@
 }
 
 body {
+   
+    font-family: "Montserrat",sans-serif;
+    background-color: #FFFFFF;
+
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
-    height:100%;
-    margin:0px;
     padding:0px;
     text-transform:uppercase;
-    width:250px;
+    
 }
 
 /* Portrait layout (default) */
@@ -139,7 +148,13 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
-
+.page-wrapper {
+    background-color: #e4e5e7;
+    width: 6cm;
+    margin: 0 auto;
+    cursor: default;
+    
+}
 
 
 

@@ -1,39 +1,44 @@
-  <div class="SignUp">
+<link rel="stylesheet" type="text/css" href="./css/create-account.css" />  
+<div class="SignUp">
 
-    <div class="header"> 
-        <p>
-            Sign up
-        </p>
-    </div>
+   
 
     <div class="container">
-        <div ng-hide="DiplayInputform">
+        <div ng-show="displayRegisterForm">
 
 
-            <UL style="list-style: none;">
-                <Li><p>Email</P></Li>
-                <Li><INPUT class="topcoat-text-input--large" type="email" name="InputEmail" ng-model="InputEmail" placeholder="e.g:ilovetesla@gmail.com" value=""></LI>
-                <Li><p>Password</P></Li>
-                <Li><INPUT class="topcoat-text-input--large" type="password" name="InputPassword"ng-model="InputPassword" placeholder="******" value=""></Li>
-                <Li><P>Confirm Password</P></Li>
-                <Li><INPUT class="topcoat-text-input--large" type="password" name="InputPasswordConfirm" ng-model="InputPasswordConfim" placeholder="******" value=""></Li>
-                <Li><P>Name</P></Li>
-                <Li><INPUT class="topcoat-text-input--large" type="text" name="InputName" ng-model="InputName" placeholder="e.g: Johny Melabo" value=""></Li> 
+            <ul style="list-style: none;">
+                <li><p>Email</P></li>
+                <li><input class="topcoat-text-input--large" type="email" name="InputEmail" ng-model="InputEmail" placeholder="e.g:ilovetesla@gmail.com" value="" required></LI>
+                <li><p>Password</P></li>
+                <li><input class="topcoat-text-input--large" type="password" name="InputPassword"ng-model="InputPassword" placeholder="******" value="" required></li>
+                <li><P>Confirm Password</P></li>
+                <li><input class="topcoat-text-input--large" type="password" name="InputPasswordConfirm" ng-model="InputPasswordConfim" placeholder="******" value="" required></li>
+                <li><P>Name</P></li>
+                <li><input class="topcoat-text-input--large" type="text" name="InputName" ng-model="InputName" placeholder="e.g: Johny Melabo" value="" required></li> 
 
 
-                <Li ng-click="DisplayTerms()" class="topcoat-button--quiet" ><p class="termsText">Terms and conditions</P></Li>
-                <Li><Button type="submit" name="SubmitBtn">Submit</BUTTON></Li>
+                <li><div ng-click="showTerms()" class="topcoat-button--quiet" ><p class="termsText">Terms and conditions</p></div></li>
+                <li><button type="submit" name="SubmitBtn">Submit</button></li>
 
 
-            </UL>
+            </ul>
         </div>
 
-        <div ng-show="DiplayTerms">
+        <div ng-show="displayTerms">
 
-            Bla bla bla terms of conditions
+            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. 
+            Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. 
+            Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, 
+            bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün 
+            klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 
+            45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 
+            1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok 
+            popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki 
+            bir satırdan gelmektedir
 
-            <BUTTON ng-click="DisplayInputform()">Back</BUTTON>
-        </DIV>   
+            <button ng-click="showRegisterForm()">Back</button>
+        </div>   
 
     </div>
 
