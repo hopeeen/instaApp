@@ -8,21 +8,20 @@
       <tr><th colspan="4">Point of interest</th></tr>
     </thead>
     <tbody>
-    <li class="poilist" ng-repeat="interests in interests">
-        
+    
+        <div ng-repeat="interests in interests" class="interests">
+       <!--            <img src="./img/logo.png" /><br>
+       -->
+  <img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/>     
   {{interests.interestRating}}
   {{interests.interestName}}
   {{interests.interestLocation}}
-    </li>
-    
-   
-        
+  {{interests.imgname}}
+
+        </div>
         <td>
-            <!--
-          <img src="../img/flags/{{driver.Driver.nationality}}.png" />
-            -->
-            <img src="./img/logo.png" />
-            <br>{{interests.interestRating}}
+        
+            <b> Rating:</b> {{interests.interestRating}}
         </td>
         <td>{{interests.interestName}} &nbsp; {{interests.interestLocation}}</td>
       </tr>

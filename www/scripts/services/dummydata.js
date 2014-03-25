@@ -232,25 +232,29 @@
                     var interests = [{
                             interestName: 'Blue Moske',
                             interestLocation: 'Istanbul',
-                            interestRating: '5.0'
+                            interestRating: '5.0',
+                            imgname: 'bluemoske'
 
                         },
                         {
                             interestName: 'Red Moske',
                             interestLocation: 'Istanbul',
-                            interestRating: '6.0'
+                            interestRating: '6.0',
+                            imgname: 'redmoske'
 
                         },
                         {
                             interestName: 'Pink Moske',
                             interestLocation: 'Istanbul',
-                            interestRating: '3.0'
+                            interestRating: '3.0',
+                            imgname: 'pinkmoske'
 
                         },
                         {
                             interestName: 'Brown Moske',
                             interestLocation: 'Istanbul',
-                            interestRating: '1.0'
+                            interestRating: '1.0',
+                            imgname: 'brownmoske'
 
                         }];
                     return interests;

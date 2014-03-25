@@ -8,7 +8,11 @@ and open the template in the editor.
     Author     : axel
 */
 
-.poilist{
-    list-style: none;
+.interests{
+    list-style-type: none;
     
+}
+
+.intpics {
+    height: 50px;
 }
