@@ -1,5 +1,5 @@
-var app = angular.module('appen', []);
-app.controller('MainCtrl', function($scope, sharedProperties) {
+
+app.controller('manageAccountCTRL', function($scope, sharedProperties) {
   $scope.name = 'Petter Lundemo';
   $scope.email = 'petter_lundemo@hotmail.com';
   $scope.description = '';

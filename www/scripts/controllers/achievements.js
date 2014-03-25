@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-'use strict';
+var app = angular.module('billebamodul', []);
 
-angular.module('sqsWebClientApp')
-        .controller('CreateSubjectCtrl', function($scope, dummyData, Accounts) {
+        app.controller('achievementsctrl', function($scope) {
         $scope.test="nkjk";    
-        $scope.achievementcollector = Accounts.getAchievements();
+        
 
         $scope.showMA = True;
         $scope.showLOA = False;
