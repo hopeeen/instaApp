@@ -6,6 +6,10 @@ angular.module('myApp.controllers', []).
   controller('LoginController', [function() {
 
   }])
-  .controller('manageAccountCTRL', [function() {
+  .controller('poicontroller', [function() {
+
+  }])
+  .
+  controller('manageAccountCTRL', [function() {
 
   }]);
