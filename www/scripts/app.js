@@ -18,3 +18,8 @@ config(['$routeProvider', function($routeProvider) {
   
   $routeProvider.otherwise({redirectTo: '/404'});
 }]);
+
+
+app.constant('REST', {
+  'path': '158.38.43.92/'
+});

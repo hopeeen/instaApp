@@ -1,33 +1,35 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#/create-account">create-account</a></li>
-    <li><a href="#/map">map</a></li>
-    <li><a href="#/achievements">achievements</a></li>
-    <li><a href="#/left-menu">left-menu</a></li>
-    <li><a href="#/login">login</a></li>
-   
-  </ul>
+    <head>
+        <meta charset="utf-8">
+        <title>My AngularJS App</title>
+        <link rel="stylesheet" href="css/app.css"/>
+    </head>
+    <body>
+        <ul class="menu">
+            <li><a href="#/create-account">create-account</a></li>
+            <li><a href="#/map">map</a></li>
+            <li><a href="#/achievements">achievements</a></li>
+            <li><a href="#/left-menu">left-menu</a></li>
+            <li><a href="#/login">login</a></li>
 
-  <div ng-view></div>
-  
-  <div>Angular seed app: v</div>
+        </ul>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-route.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/services/services.js"></script>
-  <script src="scripts/controllers/controllers.js"></script>
-  <script src="scripts/directives/filters.js"></script>
-  <script src="scripts/directives/directives.js"></script>
-</body>
+        <div ng-view></div>
+
+        <div>Angular seed app: v</div>
+
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+        -->
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-route.js"></script>
+        <script src="lib/CryptoJS/components/core-min.js"></script>
+        <script src="lib/CryptoJS/components/enc-base64-min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services/services.js"></script>
+        <script src="scripts/controllers/controllers.js"></script>
+        <script src="scripts/directives/filters.js"></script>
+        <script src="scripts/directives/directives.js"></script>
+    </body>
 </html>
