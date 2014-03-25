@@ -9,6 +9,7 @@ angular.module('myApp', [
     'myApp.directives',
     'myApp.controllers'
 ]).
+
         config(['$routeProvider', function($routeProvider) {
                 $routeProvider.when('/map', {templateUrl: 'partials/map.html', controller: 'mapController'});
                 $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'loginController'});
@@ -22,4 +23,5 @@ angular.module('myApp', [
 app.constant('REST', {
     'path': '/CustomerAppClientServerAuthServlet/resources/'
 });
+
 

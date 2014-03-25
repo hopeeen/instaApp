@@ -1,0 +1,52 @@
+.SignUp{
+  margin: 0px auto;
+}    
+
+.header {
+    background-color: #666666;  
+    color: #47D1FF;  
+    width: 22%;
+    height: 10%;
+    padding: 20px;
+}    
+
+.container{
+  
+    background-color: #E6E6E6;  
+    color: #47D1FF;  
+    width: 22%;
+    height: 50%;
+    padding: 12px;
+    
+}
+.termsText {  
+    color: #000000;  
+}    
+
+.topcoat-text-input,
+.topcoat-text-input--large {
+    line-height: 1.313rem;
+    font-size: 12px;
+    letter-spacing: 0;
+    padding: 0 0.563rem;
+    border: 1px solid #494949;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px rgba(0,0,0,0.05);
+    color: #4f4a4a;
+    vertical-align: top;
+    
+}
+
+.topcoat-text-input:focus,
+.topcoat-text-input--large:focus {
+    background-color: #ffffff;
+    color: #4f4a4a;
+    border: 1px solid #494949;
+    box-shadow: 0 0 0 2px #6fb5f1;
+}
+
+
+
+
+

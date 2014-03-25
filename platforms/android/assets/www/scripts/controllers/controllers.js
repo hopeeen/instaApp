@@ -2,10 +2,10 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('IstanbulApp.controllers', []).
+  controller('MapsCTRL', [function() {
 
   }])
-  .controller('MyCtrl2', [function() {
+  .controller('CreateSubjectCtrl', [function() {
 
   }]);

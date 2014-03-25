@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="appen">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Manage account</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="../css/create-account.css" />
+    <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" data-semver="1.0.7"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script type="text/javascript" src="../scripts/controllers/create-account.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+      
+      
+    <div class="SignUp">
+
+    <div class="header"> 
+        <p>
+            Sign up
+        </p>
+    </div>
+
+    <div class="container">
+        <div ng-hide="DiplayInputform">
+
+
+            <UL style="list-style: none;">
+                <Li><p>Email</P></Li>
+                <Li><INPUT class="topcoat-text-input--large" type="email" name="InputEmail" ng-model="InputEmail" placeholder="e.g:ilovetesla@gmail.com" value=""></LI>
+                <Li><p>Password</P></Li>
+                <Li><INPUT class="topcoat-text-input--large" type="password" name="InputPassword"ng-model="InputPassword" placeholder="******" value=""></Li>
+                <Li><P>Confirm Password</P></Li>
+                <Li><INPUT class="topcoat-text-input--large" type="password" name="InputPasswordConfirm" ng-model="InputPasswordConfim" placeholder="******" value=""></Li>
+                <Li><P>Name</P></Li>
+                <Li><INPUT class="topcoat-text-input--large" type="text" name="InputName" ng-model="InputName" placeholder="e.g: Johny Melabo" value=""></Li> 
+
+
+                <Li ng-click="DisplayTerms()" class="topcoat-button--quiet" ><p class="termsText">Terms and conditions</P></Li>
+                <Li><Button type="submit" name="SubmitBtn">Submit</BUTTON></Li>
+
+
+            </UL>
+        </div>
+
+        <div ng-show="DiplayTerms">
+
+            Bla bla bla terms of conditions
+
+            <BUTTON ng-click="DisplayInputform()">Back</BUTTON>
+        </DIV>   
+
+    </div>
+
+
+</div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  </body>
+
+</html>

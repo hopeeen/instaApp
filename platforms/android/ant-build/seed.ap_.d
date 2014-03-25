@@ -25,7 +25,10 @@ C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\asse
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\plugins \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\css\achievement.css \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\css\app.css \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\css\create-account.css \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\css\maps.css \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\lib\angular \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\lib\angular\angular-animate.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\lib\angular\angular-animate.min.js \
@@ -303,6 +306,11 @@ C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\asse
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\lib\angular\i18n\angular-locale_zh.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\lib\angular\i18n\angular-locale_zu-za.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\lib\angular\i18n\angular-locale_zu.js \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\404.html \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\achievement.html \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\create-account.html \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\manage-account.html \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\map.html \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\partial1.html \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\partials\partial2.html \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\plugins\org.apache.cordova.camera \
@@ -382,8 +390,14 @@ C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\asse
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\controllers \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\directives \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\services \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\controllers\achievements.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\controllers\controllers.js \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\controllers\create-account.js \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\controllers\manage-account.js \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\controllers\maps.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\directives\directives.js \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\directives\google-maps-min.js \
+C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\directives\underscore.min.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\services\filters.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\assets\www\scripts\services\services.js \
 C:\Users\hopalicious\Documents\NetBeansProjects\seed\seed\platforms\android\ant-build\AndroidManifest.xml \
