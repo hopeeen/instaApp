@@ -1,33 +1,28 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 
         app.controller('achievementsctrl', function($scope) {
-        $scope.test="nkjk";    
+           
         
 
-        $scope.showMA = True;
-        $scope.showLOA = False;
-        $scope.showLeaderboard = False;
+        $scope.showMA = true;
+        $scope.showLOA = false;
+        $scope.showLeaderboard = false;
         
         $scope.opentabMA = function() {
-            $scope.showMA = True;
-            $scope.showLOA = False;
-            $scope.showLeaderboard = False;
+            $scope.showMA = true;
+            $scope.showLOA = false;
+            $scope.showLeaderboard = false;
         };
         
         $scope.opentabLOA = function() {
-            $scope.showMA = False;
-            $scope.showLOA = True;
-            $scope.showLeaderboard = False;
+            $scope.showMA = false;
+            $scope.showLOA = true;
+            $scope.showLeaderboard = false;
         };
         
         $scope.opentabLeaderboard = function() {
-            $scope.showMA = False;
-            $scope.showLOA = False;
-            $scope.showLeaderboard = True;
+            $scope.showMA = false;
+            $scope.showLOA = false;
+            $scope.showLeaderboard = true;
         };
         });
