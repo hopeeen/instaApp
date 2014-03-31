@@ -1,9 +1,9 @@
 
-
-
 <table>
     <thead>
-        <link rel="stylesheet" type="text/css" href="../css/pointofinterest.css" />
+        <link rel="stylesheet" type="text/css" href="./css/app.css" />
+        <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
+
         
         <tr><b>Point of interest</b></tr>
     </thead>
@@ -12,7 +12,7 @@
         <div ng-repeat="interests in interests" class="interests">
        <!--            <img src="./img/logo.png" /><br>
        -->
-  <img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/>     
+  <div img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/>     
   
   {{interests.interestName}} /
   {{interests.interestLocation}}<br>
