@@ -14,7 +14,9 @@
 
   <body ng-controller="manageAccountCTRL">
       
-
+      <div ng-repeat="errors in errors">
+          {{errors}}
+      </div>
       <div class="topcoat-list">
       <ul class="topcoat-list__container">
           
@@ -29,6 +31,15 @@
       
               <label class="manage-label">E-mail:</label></br>
       <input class="topcoat-text-input--large" type="text" ng-model="email">
+              
+          </li>
+          
+                    
+          <li class="topcoat-list__item" ng-click="showpic = !showpic">Edit profile picture</li>
+          <li class="licontent" ng-hide="showpic">
+      
+              <label class="manage-label">ddd</label></br>
+   
               
           </li>
       
@@ -47,18 +58,23 @@
               
               
           </li>
-      </ul>
-      </div>
-      
-      <button ng-click="pushbutton()">Test</button>
-      
-      <div ng-app="app">
           
-          <div ng-controller="validation">
+          <li class="topcoat-list__item" ng-click="showdelete = !showdelete">Delete your account</li>
+          <li class="licontent" ng-hide="showdelete">
+              <label class="deleteaccount">If you delete your account, you can NOT get your account back</label>
+              </br>
+              <label class="manage-label">Password:</label></br>
+              <input class="topcoat-text-input--large" type="text" ng-model="verifypassword"/></br></br>
+             <a class="bigredbutton" ng-click="delete()">DELETE YOUR ACCOUNT</a>
               
-          </div>
-          
+          </li>
+      </ul>
+      
+      <button ng-click="pushbutton()">fewfew</button>
       </div>
+  
+    
+      
       
       
     <!--
