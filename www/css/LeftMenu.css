@@ -25,23 +25,51 @@ and open the template in the editor.
 
 .Menu ul li  {
     color:#47D1FF;
-    border-bottom: 1px white solid;
+    padding:5%;
+    height:10%; 
+   
+    border-bottom:1px #999999 solid;    
+}
+
+.Menu ul .mellomrom{
+  padding:20%;
     
 }
 
-
-
-
 .SignUp {
-    border:#666666;
-    width: 75%; 
-    background-color: #666666;   
+     
 
 }
 
+.signtekst{
+  text-align: center;
+  color:#47D1FF; 
+ 
+  
+  
+      
+      
+}
+
+
+
+    
 .SignUp table tr td img{
     max-width: 35px;
     position: relative;
     border-color: white;
+    
 
 }
+
+.bilder{
+margin:auto;
+width: 50%;
+}
+
+.signinbtn{
+margin:auto;
+width: 50%;    
+}
+
+

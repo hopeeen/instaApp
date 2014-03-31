@@ -1,7 +1,7 @@
 
 app.controller('leftmenucontroller', function($scope, dummyData) {
         
-        $scope.sjekk="haha";
+       $scope.sjekk= "ahaha"
         
         $scope.ShowSignIn = false;
                 $scope.DisplaySignIn = function() {
@@ -11,4 +11,4 @@ app.controller('leftmenucontroller', function($scope, dummyData) {
 
                 $scope.ShowSignIn = false;
                         };
-                    });  
+                    });  ""

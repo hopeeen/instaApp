@@ -15,7 +15,7 @@ var app = angular.module('myApp', [
                 $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginController'});
                 $routeProvider.when('/create-account', {templateUrl: 'partials/create-account.html', controller: 'create-accountCtrl'});
                 $routeProvider.when('/manage-account', {templateUrl: 'partials/manage-account.html', controller: 'manageAccountCTRL'});
-                $routeProvider.when('/achievements', {templateUrl: 'partials/achievements.html', controller: 'achievementsctrl'});
+                $routeProvider.when('/achievements', {templateUrl: 'partials/achievement.html', controller: 'achievementsctrl'});
                 $routeProvider.when('/left-menu', {templateUrl: 'partials/leftmenu.html', controller: 'leftmenucontroller'});
                 $routeProvider.when('/pointofinterest', {templateUrl: 'partials/pointofinterest.html', controller: 'poicontroller'});
                 

@@ -1,5 +1,5 @@
 
-app.controller('manageAccountCTRL', function($scope, sharedProperties) {
+app.controller('manageAccountCTRL', function($scope) {
   $scope.name = 'Petter Lundemo';
   $scope.email = 'petter_lundemo@hotmail.com';
   $scope.description = '';
@@ -14,11 +14,6 @@ app.controller('manageAccountCTRL', function($scope, sharedProperties) {
   };
   
   
-  $scope.go = function(item) {
-    sharedProperties.setListName(item);
-    
-    
-  }
   
   $scope.delete = function(){
   var yn = confirm("Are you sure you want to delete your account?");
@@ -31,10 +26,6 @@ app.controller('manageAccountCTRL', function($scope, sharedProperties) {
   
   }
   
-  $scope.getItem = function() {
-    
-    $scope.msg = sharedProperties.getListName();
-  }
   
   $scope.pushbutton = function(){
       
@@ -42,7 +33,7 @@ app.controller('manageAccountCTRL', function($scope, sharedProperties) {
       
       $scope.name = $scope.validate($scope.name);
       $scope.email = $scope.validate($scope.email);
-      $scope.description = $scope.validate($scope.description)
+      $scope.description = $scope.validate($scope.description);
       
       var newpassword = $scope.newpassword;
       var oldpassword = $scope.oldpassword;
@@ -58,19 +49,4 @@ app.controller('manageAccountCTRL', function($scope, sharedProperties) {
   }
 });
 
-app.service('sharedProperties', function () {
-    var list_name = '';
-  
-    return {
-  
-        getListName: function() {
-            return list_name;
-        },
-        setListName: function(name) {
-            list_name = name;
-        }
-    };
-    
-   
-});
    
