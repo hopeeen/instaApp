@@ -30,14 +30,16 @@ app.controller('manageAccountCTRL', function($scope) {
   $scope.pushbutton = function(){
       
       var error = false;
-      
+      var errors = new Array();
       $scope.name = $scope.validate($scope.name);
       $scope.email = $scope.validate($scope.email);
       $scope.description = $scope.validate($scope.description);
       
       var newpassword = $scope.newpassword;
       var oldpassword = $scope.oldpassword;
-      alert("Funka");
+      alert($scope.validate($scope.name));
+      
+      
       
       
       
