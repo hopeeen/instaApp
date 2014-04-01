@@ -1,4 +1,6 @@
-<link rel="stylesheet" type="text/css" href="./css/create-account.css" />  
+
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />  
+<!--<link rel="stylesheet" type="text/css" href="./css/create-account.css" /> -->   
 <div class="SignUp">
 
    
@@ -6,23 +8,42 @@
     <div class="container">
         <div ng-show="displayRegisterForm">
 
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
 
-            <ul style="list-style: none;">
-                <li><p>Email</P></li>
-                <li><input class="topcoat-text-input--large" type="email" name="InputEmail" ng-model="InputEmail" placeholder="e.g:ilovetesla@gmail.com" value="" required></LI>
-                <li><p>Password</P></li>
-                <li><input class="topcoat-text-input--large" type="password" name="InputPassword"ng-model="InputPassword" placeholder="******" value="" required></li>
-                <li><P>Confirm Password</P></li>
-                <li><input class="topcoat-text-input--large" type="password" name="InputPasswordConfirm" ng-model="InputPasswordConfim" placeholder="******" value="" required></li>
-                <li><P>Name</P></li>
-                <li><input class="topcoat-text-input--large" type="text" name="InputName" ng-model="InputName" placeholder="e.g: Johny Melabo" value="" required></li> 
-
-
-                <li><div ng-click="showTerms()" class="topcoat-button--quiet" ><p class="termsText">Terms and conditions</p></div></li>
-                <li><button type="submit" name="SubmitBtn">Submit</button></li>
-
-
-            </ul>
+        <!-- USERNAME -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+            <label>Username</label>
+            <input type="text" name="name" class="form-control" ng-model="user.name" required>
+            <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Username is required.</p>
+        </div>
+        
+        <!-- PASSWORD -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+            <label>Password</label>
+            <input type="text" name="password" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="30">
+            <p ng-show="userForm.username.$error.minlength" class="help-block">Password is too short.</p>
+            <p ng-show="userForm.username.$error.maxlength" class="help-block">Password is too long.</p>
+        </div>
+        
+        <!-- REPEAT PASSWORD -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+            <label>Password</label>
+            <input type="text" name="password" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="30">
+            <p ng-show="userForm.username.$error.minlength" class="help-block">Password is too short.</p>
+            <p ng-show="userForm.username.$error.maxlength" class="help-block">Password is too long.</p>
+        </div>
+        
+        
+        <!-- EMAIL -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email">
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+        <button ng-click="showTerms()" class="btn btn-default" >Terms and <br>Conditions</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
         </div>
 
         <div ng-show="displayTerms">
@@ -37,7 +58,7 @@
             popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki 
             bir satırdan gelmektedir
 
-            <button ng-click="showRegisterForm()">Back</button>
+            <button class="btn btn-default" ng-click="showRegisterForm()">Back</button>
         </div>   
 
     </div>
