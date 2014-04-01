@@ -5,11 +5,13 @@ var app = angular.module('myApp', [
     'myApp.filters',
     'myApp.services',
     'myApp.directives',
-    'myApp.controllers'
+    'myApp.controllers',
+    'ui.map'
 ]).
 
         config(['$routeProvider', function($routeProvider) {
                 $routeProvider.when('/map', {templateUrl: 'partials/map.html', controller: 'mapController'});
+                $routeProvider.when('/mapTest', {templateUrl: 'partials/testMap.html', controller: 'mapTestController'});
                 $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginController'});
                 $routeProvider.when('/create-account', {templateUrl: 'partials/create-account.html', controller: 'create-accountCtrl'});
                 $routeProvider.when('/manage-account', {templateUrl: 'partials/manage-account.html', controller: 'manageAccountCTRL'});
@@ -31,4 +33,3 @@ app.service('daoUser', function($injector) {
 app.service('dummyData', function($injector) {
   return $injector.get('dummydata.js');
 });
-
