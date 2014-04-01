@@ -38,7 +38,10 @@
           <li class="topcoat-list__item" ng-click="showpic = !showpic">Edit profile picture</li>
           <li class="licontent" ng-hide="showpic">
       
-              <label class="manage-label">ddd</label></br>
+              <label class="manage-label"></br>
+                  
+              </label></br>
+              <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
    
               
           </li>
