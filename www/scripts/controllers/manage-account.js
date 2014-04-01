@@ -10,12 +10,22 @@ app.controller('manageAccountCTRL', function($scope) {
   $scope.showdelete = true;
   $scope.showpic = true;
  
-  $scope.testtest = function(){
+ 
+  
+ $scope.uploadFile = function(files) {
+    var fd = new FormData();
+    //Take the first selected file
+    fd.append("file", files[0]);
+
+    $http.post('../img/', fd, {
+        withCredentials: true,
+        headers: {'Content-Type': undefined },
+        transformRequest: angular.identity
+    
+
+});
+ };      
       
-    alert($scope.testen);  
-  
-  };
-  
   
   
   $scope.delete = function(){
