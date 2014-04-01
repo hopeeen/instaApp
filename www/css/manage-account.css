@@ -24,7 +24,7 @@ li.licontent{
 }
 ul{
     margin-left: 0px;
-    padding-left: 10px;
+    padding-left: 0px;
     border: 1px solid black;
 }
 li > ul {
@@ -236,4 +236,63 @@ li > ul {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+
+
+
+
+
+
+
+.bigredbutton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #660000) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #660000 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#660000');
+	background-color:#fe1a00;
+	-webkit-border-top-left-radius:40px;
+	-moz-border-radius-topleft:40px;
+	border-top-left-radius:40px;
+	-webkit-border-top-right-radius:40px;
+	-moz-border-radius-topright:40px;
+	border-top-right-radius:40px;
+	-webkit-border-bottom-right-radius:40px;
+	-moz-border-radius-bottomright:40px;
+	border-bottom-right-radius:40px;
+	-webkit-border-bottom-left-radius:40px;
+	-moz-border-radius-bottomleft:40px;
+	border-bottom-left-radius:40px;
+	text-indent:0px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial Black;
+	font-size:15px;
+	font-weight:bold;
+	font-style:italic;
+	height:30px;
+	line-height:30px;
+	width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 0px 0px #b23e35;
+}
+.bigredbutton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #660000), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #660000 5%, #fe1a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#660000', endColorstr='#fe1a00');
+	background-color:#660000;
+}.bigredbutton:active {
+	position:relative;
+	top:1px;
+}
+label.deleteaccount{
+    color: red;
+    text-transform: none;
+}
+label.manage-label{
+    text-transform: none;
 }
