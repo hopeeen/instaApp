@@ -1,30 +1,21 @@
-
-
     <thead>
         <link rel="stylesheet" type="text/css" href="./css/app.css" />
         <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
 
         
-        <tr><b>Point of interest</b></tr>
-    </thead>
+        <tr>Point of interest</tr>
     <tbody>
                     <div ng-repeat="interests in interests" class="interests">
 
-        <table class="interests">
+        <table class="interests" ng-show="true">
   <tr>
-    <th width="40%"><div img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/> sss  </th>
-    <th class="tg-031e">{{interests.interestName}} <br> {{interests.interestLocation}}</th>
+      <th><div class="container"><img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/></div></th>
+        <th align="left"><b>{{interests.interestName}}</b> <br> <i>{{interests.interestLocation}}</i></th>
   </tr>
   <tr>
-    <td class="tg-031e" colspan="2">{{interests.interestRating}} / 5</td>
+      <td></td>
+    <td align="middle">{{interests.interestRating}} / 5</td>
     
   </tr>
 </table>
-        
-        
-    
-
-        </div>
-   
- 
-
+</div>
