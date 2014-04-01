@@ -2,7 +2,10 @@ app.controller('poicontroller', function($scope, dummyData) {
             
                     $scope.interests = dummyData.getInterest();
                     
-                    
+        $scope.showInterest = function() {
+            
+     
+    };
  
                     
                     

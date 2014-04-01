@@ -3,16 +3,19 @@
         <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
 
     <tbody>
-                    <div ng-repeat="interests in interests" class="interests">
-
-        <table class="interests" ng-show="true" border="1" width="100%">
+        <div ng-repeat="interests in interests" class="interests">
+            <a ng-href="#/pointofinterest/{{poi.id}}">
+        <table class="interests" width="100%">
   <tr>
       <th><div class="container"><img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/></div></th>
         <th align="left"><b>{{interests.interestName}}</b> <br> <i>{{interests.interestLocation}}</i></th>
   </tr>
   <tr>
-      <td></td>
-    <td align="middle">{{interests.interestRating}} / 10</td>
+      
+      <td align="middle" colspan="2">Rating:{{interests.interestRating}} / 10<br>
+          <hr>
+      </td>
   </tr>
 </table>
+            </a>
 </div>
