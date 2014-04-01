@@ -8,11 +8,22 @@ and open the template in the editor.
     Author     : axel
 */
 
-.interest{
-    list-style-type: none;
-    
+.container {
+    width: 100px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
     
 }
+
+.interest{
+    list-style-type: none;
+}
+
+
+
 
 .location{
     

@@ -233,7 +233,7 @@
                             interestName: 'Blue Moske',
                             interestLocation: 'Istanbul',
                             interestRating: '5.0',
-                            imgname: 'bluemoske'
+                            imgname: 'redmoske'
 
                         },
                         {
