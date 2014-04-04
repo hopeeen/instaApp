@@ -24,7 +24,7 @@ app.service('daoUser', function($location, $http, REST) {
     localStorage.userAuth = 'Basic ' + base64;
     $http.defaults.headers.common.Authorization = localStorage.userAuth;
 
-    $http.get(REST.path + 'login').success(function(result) {
+    $http.get(REST.path + 'accounts').success(function(result) {
       localStorage.userRole = result;
       loggedIn.value = true;
       if (typeof (successCallback) == 'function') {

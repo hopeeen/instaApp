@@ -23,7 +23,7 @@ var app = angular.module('myApp', [
             }]);
 
 app.constant('REST', {
-    'path': '/CustomerAppClientServerAuthServlet/resources/'
+    'path': 'http://158.38.43.92:5000/'
 });
 
 app.service('daoUser', function($injector) {
