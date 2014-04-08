@@ -1,9 +1,7 @@
 
 
         app.controller('achievementsctrl', function($scope) {
-           
-        $scope.test = "Petter";
-
+  
         $scope.showMA = true;
         $scope.showLOA = false;
         $scope.showLeaderboard = false;

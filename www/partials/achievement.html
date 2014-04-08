@@ -18,105 +18,99 @@ and open the template in the editor.
     </head>
     <body ng-controller="achievementsctrl">
         <div class="topbar">
-            <div class="topcoat-button-bar">
-                <div class="topcoat-button-bar__item">
-                    <button class="topcoat-button-bar__button--large">My Achievements</button>
-                </div>
-                <div class="topcoat-button-bar__item">
-                    <button class="topcoat-button-bar__button--large">List of <br>Achievements</button>
-                </div>
-                <div class="topcoat-button-bar__item">
-                    <button class="topcoat-button-bar__button--large">Leaderboard</button>
-                </div>
-            </div>
+            <div class="btn-group btn-group-justified">
+  <a ng-click="opentabMA()" class="btn btn-default">My Achievements</a>
+  <a ng-click="opentabLOA()" class="btn btn-default">List of Achievements</a>
+  <a ng-click="opentabLeaderboard()" class="btn btn-default">Leaderboard</a>
+</div>
+            
         </div>
 
         <div class="tabContent" id="myachievements" ng-show="showMA">
 
             <h1>My achievements</h1>
 
-            <div class="container" ng-repeat="achievements in achievement">
-                <div class="list-element">
-                    <div class="column-1">
-                        <img src="../img/{done}.png">
-                    </div>
-                    <div class="column-2">
-                        {{achievement.name}}
-                    </div>
-                    <div class="column-3">
-                        {{achievement.points}}
-                    </div>
-
-                    <div class="bottom">
-
-                        <div class="totpoints">
-                            <b>
-                                Total points
-                            </b>
-                        </div>
-
-                        <div class="totalpoints">
-                            {{achievements.mytotalpoints}}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="container" ng-repeat="achievement in achievement">
+                <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Completed</th>
+      <th>Achievement</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../img/{done}.png"></td>
+      <td>{{achievement.name}}</td>
+      <td>{{achievement.points}}</td>
+    </tr>
+    <tr>
+        <td>Total points</td>
+        <td>{{achievement.mytotalpoints}}</td>
+    </tr>
+  </tbody>
+                    </table>
 
         </div>
 
         <div class="tabContent" id="listofachievements" ng-show="showLOA">
-
             <h1>List of Achievements</h1>
-            <div class="container" ng-repeat="achievements in achievement">
-                <div class="list-element">
-                    <div class="column-1">
-                        <img src="../img/{done}.png">
-                    </div>
-                    <div class="column-2">
-
-                        <b>
-                            {{achievement.name}}
-                        </b>
-                        <br>
-                        {{achievement.description}}
-                    </div>
-                    <div class="column-3">
-                        {{achievement.points}}
-                    </div>
-                </div>
+            <div class="container" ng-repeat="achievement in achievement">
+                                <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Completed</th>
+      <th>Achievement</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../img/{done}.png"></td>
+      <td>
+          <b>{{achievement.name}}</b>
+          {{achievement.description}}
+      </td>
+      <td>{{achievement.points}}</td>
+    </tr>
+  </tbody>
+                    </table>
             </div>
         </div>
 
         <div class="tabContent" id="leaderboard" ng-show="showLeaderboard">
 
             <h1>Leaderboard</h1>
-            <div class="container" ng-repeat="achievements in achievement">
-                <div class="list-element">
-                    <div class="column-1">
-                        /* bilde av brukeren*/
-                    </div>
-                    <div class="column-2">
-                        {{achievements.username}}
-                    </div>
-                    <div class="column-3">
-                        {{achievements.totalpoints}}
-                    </div>
-
-                    <div class="bottom">
-                        <div class="column-1">
-                            /* bilde av brukeren*/
-                        </div>
-                        <div class="column-2">
-                            {{achievements.myusername}}
-                        </div>
-                        <div class="column-3">
-                            {{achievements.mytotalpoints}}
-                        </div>
-                    </div>
-
-                </div>
+            <div class="container" ng-repeat="achievement in achievement">
+                <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>User</th>
+      <th>Total Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{achievement.rank}}</td>
+      <td>
+          {{achievement.userimg}}
+          {{achievement.username}}
+      </td>
+      <td>{{achievement.totalpoints}}</td>
+    </tr>
+     <tr>
+      <td>{{achievement.rank}}</td>
+      <td>
+          {{achievement.myuserimg}}
+          {{achievement.myusername}}
+      </td>
+      <td>{{achievement.mytotalpoints}}</td>
+    </tr>
+  </tbody>
+                    </table>
             </div>
         </div>
-        <input type="text" ng-model="test">
     </body>
 </html>
