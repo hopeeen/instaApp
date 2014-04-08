@@ -9,14 +9,14 @@
     </head>
     <body>
         <div class="page-wrapper">
-        
-        <header>header</header>
-        <div ng-view></div>
+
+            <header>header</header>
+            <div ng-view></div>
         </div>
         <footer><br></footer>
         <ul class="menu">
             <li><a href="#/create-account">create-account</a></li>
-            <li><a href="#/map">map</a></li>
+            <li><a href="#/mapTest">map</a></li>
             <li><a href="#/achievements">achievements</a></li>
             <li><a href="#/left-menu">left-menu</a></li>
             <li><a href="#/login">login</a></li>
@@ -31,7 +31,7 @@
         <script src="lib/CryptoJS/components/core-min.js"></script>
         <script src="lib/CryptoJS/components/enc-base64-min.js"></script>
         <script src="scripts/app.js"></script>
-        
+
         <!--Controller-->
         <script src="scripts/controllers/controllers.js"></script>
         <script src="scripts/controllers/create-account.js"></script>
@@ -41,6 +41,7 @@
         <script src="scripts/controllers/pointofinterest.js"></script>
         <script src="scripts/controllers/leftmenu.js"></script>
         <script src="scripts/controllers/achievements.js"></script>
+        <script src="scripts/controllers/mapTest.js"></script>
         <!--Services-->
         <script src="scripts/services/filters.js"></script>
         <script src="scripts/services/services.js"></script>
@@ -48,6 +49,11 @@
         <script src="scripts/services/dummydata.js"></script>
         <!--Directives-->
         <script src="scripts/directives/directives.js"></script>
+        <script src="scripts/directives/ui-map.js"></script>
+        <script src="scripts/directives/ui-utils.js"></script>
+        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
+
     </body>
 
 </html>
