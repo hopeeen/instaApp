@@ -23,7 +23,7 @@ var app = angular.module('myApp', [
             }]);
 
 app.constant('REST', {
-    'path': 'http://158.38.43.92:5000/'
+    'path': 'http://instabul.herokuapp.com/'
 });
 
 app.service('daoUser', function($injector) {

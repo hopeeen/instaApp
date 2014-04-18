@@ -270,3 +270,4 @@ proguard/
 *.ipr
 *.iws
 .idea/
+!/www/lib/
