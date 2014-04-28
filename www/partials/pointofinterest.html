@@ -1,21 +1,19 @@
-    <thead>
-        <link rel="stylesheet" type="text/css" href="./css/app.css" />
-        <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="./css/app.css" />
+<link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
 
-    <tbody>
-        <div ng-repeat="interests in interests" class="interests">
-            <a ng-href="#/pointofinterest/{{poi.id}}">
-        <table class="interests" width="100%">
-  <tr>
-      <th><div class="container"><img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/></div></th>
-        <th align="left"><b>{{interests.interestName}}</b> <br> <i>{{interests.interestLocation}}</i></th>
-  </tr>
-  <tr>
-      
-      <td align="middle" colspan="2">Rating:{{interests.interestRating}} / 10<br>
-          <hr>
-      </td>
-  </tr>
-</table>
-            </a>
+<div ng-repeat="interest in interests" class="interests">
+    <a ng-click="saveToLocal(interest)" ng-href="#/pointofinterest/{{poi.id}}">
+        <table class="interest" width="100%">
+            <tr>
+                <th><div class="container"><img ng-src="{{'./img/interests/' + interest.imgname + '.png'}}"/></div></th>
+            <th align="left"><b>{{interest.interestName}}</b> <br> <i>{{interest.interestLocation}}</i></th>
+            </tr>
+            <tr>
+
+                <td align="middle" colspan="2">Rating:{{interest.interestRating}} / 10<br>
+                    <hr>
+                </td>
+            </tr>
+        </table>
+    </a>
 </div>

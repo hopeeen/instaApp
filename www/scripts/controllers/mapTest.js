@@ -8,7 +8,7 @@ app.controller('mapTestController', ['$scope', function($scope) {
         $scope.myMarkers = [];
 
         $scope.myLocation;
-        
+
         $scope.directionsDisplay = new google.maps.DirectionsRenderer();
 
         $scope.getCurrentLocation = function() {
@@ -25,7 +25,7 @@ app.controller('mapTestController', ['$scope', function($scope) {
         $scope.addRoute = function(start, end, waypoints) {
             var directionsService = new google.maps.DirectionsService();
             $scope.directionsDisplay.setMap($scope.myMap);
-            if(start == null){
+            if (start == null) {
                 start = $scope.myLocation;
             }
             if (waypoints != null) {
@@ -49,10 +49,12 @@ app.controller('mapTestController', ['$scope', function($scope) {
             });
         };
 
-        $scope.mapOptions = {
-            center: new google.maps.LatLng(40.9970302, 28.9654876),
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+        $scope.mapOptions = function() {
+            var defaults = {
+                center: new google.maps.LatLng(40.9970302, 28.9654876),
+                zoom: 10, 
+                mapTypeId: google.maps.MapTypeId.ROADMAP};
+            
         };
 
         $scope.addMarker = function($event, $params) {
