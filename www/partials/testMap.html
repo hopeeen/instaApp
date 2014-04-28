@@ -21,6 +21,7 @@
         <h1>Marker</h1>
         Lat: <input ng-model="currentMarkerLat">, Lng: <input ng-model="currentMarkerLng">
         <a ng-click="setMarkerPosition(currentMarker, currentMarkerLat, currentMarkerLng)">Set Position</a>
+        <button ng-click="addRoute(myLocation, currentLatLng, null)">Trace Route</button>
     </div>
 
     <!-- Giving the div an id="map_canvas" fix problems with twitter bootstrap affecting
