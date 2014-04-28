@@ -1,93 +1,62 @@
-
+ 
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />  
-<!--<link rel="stylesheet" type="text/css" href="./css/create-account.css" /> -->   
+<!--<link rel="stylesheet" type="text/css" href="./css/create-account.css" /> -->  
 <div class="SignUp">
-
-   
-
+ 
     <div class="container">
         <div ng-show="displayRegisterForm">
-
-        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
-
-        <!-- USERNAME -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-            <label>Username</label>
-            <input type="text" name="name" class="form-control" ng-model="user.name" required>
-            <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Username is required.</p>
+ 
+            <form name="registerForm" ng-submit="submitForm()" novalidate>
+ 
+                <!-- EMAIL -->
+                <div class="form-group"  ng-class="{ 'has-error' : registerForm.email.$invalid && !registerForm.email.$pristine }">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" ng-model="user.email" required>
+                    <div class="help-block" ng-show="registerForm.email.$invalid && !registerForm.email.$pristine" >
+                        <p ng-show="registerForm.email.$error.email"> Enter a valid email.</p>
+                        <p ng-show="registerForm.email.$error.required"> Email required.</p>
+                    </div>
+                </div>
+                <!-- PASSWORD -->
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine}">        
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password" ng-model="user.password"  placeholder='Password' ng-minlength="6" ng-maxlength="30" required/>
+                    <div class="help-block" ng-show="registerForm.password.$invalid && !registerForm.password.$pristine">
+                        <p ng-show="registerForm.password.$error.minlength">Password to short.</p>
+                        <p ng-show="registerForm.password.$error.maxlength">Password to long.</p>
+                        <p ng-show="registerForm.password.$error.required">Password required.</p>
+                    </div>
+                </div>
+                <!-- RETYPE PASSWORD -->
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.repassword.$invalid && !registerForm.repassword.$pristine || user.password !== user.repassword}">        
+                    <label>Confirm Password</label>
+                    <input class="form-control" type="password" name="repassword" ng-model="user.repassword" placeholder='Confirm Password' required/>
+                    <div class="help-block" ng-show="registerForm.repassword.$invalid && !registerForm.repassword.$pristine || user.password !== user.repassword">
+                        <p ng-show="registerForm.repassword.$error.maxlength">Password required.</p>
+                        <p ng-if="user.password !== user.repassword">Password mismatch</p>
+                    </div>
+                </div>
+ 
+             
+ 
+                <button type="submit" class="btn btn-primary" ng-disabled="!registerForm.$dirty || registerForm.$dirty && registerForm.$invalid">Submit</button>
+                <button class="btn btn-default" ng-click="showTerms()">Terms </button>
+                {{$scope.email}}
+            </form>
         </div>
-        
-        <!-- PASSWORD -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-            <label>Password</label>
-            <input type="text" name="password" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="30">
-            <p ng-show="userForm.username.$error.minlength" class="help-block">Password is too short.</p>
-            <p ng-show="userForm.username.$error.maxlength" class="help-block">Password is too long.</p>
-        </div>
-        
-        <!-- REPEAT PASSWORD -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-            <label>Password</label>
-            <input type="text" name="password" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="30">
-            <p ng-show="userForm.username.$error.minlength" class="help-block">Password is too short.</p>
-            <p ng-show="userForm.username.$error.maxlength" class="help-block">Password is too long.</p>
-        </div>
-        
-        
-        <!-- EMAIL -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" ng-model="user.email">
-            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-        </div>
-        <button ng-click="showTerms()" class="btn btn-default" >Terms and <br>Conditions</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        
-    </form>
-        </div>
-
+ 
         <div ng-show="displayTerms">
-
-            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. 
-            Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. 
-            Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, 
-            bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün 
-            klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 
-            45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 
-            1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok 
-            popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki 
-            bir satırdan gelmektedir
-
+ 
+            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz.
+            Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır.
+            Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock,
+            bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün
+            klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır.
+            <br>
             <button class="btn btn-default" ng-click="showRegisterForm()">Back</button>
-        </div>   
-
+        </div>  
+ 
     </div>
-
-
+ 
+ 
 </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
- <!--     
-  </body>
-
-</html>

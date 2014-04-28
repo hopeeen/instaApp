@@ -271,3 +271,5 @@ proguard/
 *.iws
 .idea/
 !/www/lib/
+/platforms/
+/plugins/

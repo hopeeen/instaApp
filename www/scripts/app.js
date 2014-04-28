@@ -2,6 +2,8 @@
 // Declare app level module which depends on filters, and services
 var app = angular.module('myApp', [
     'ngRoute',
+    'ngResource',
+    'restangular',
     'myApp.filters',
     'myApp.services',
     'myApp.directives',
@@ -9,7 +11,7 @@ var app = angular.module('myApp', [
     'ui.map'
 ]).
 
-        config(['$routeProvider', function($routeProvider) {
+        config(['$routeProvider', 'RestangularProvider', function($routeProvider, RestangularProvider) {
                 $routeProvider.when('/map', {templateUrl: 'partials/map.html', controller: 'mapController'});
                 $routeProvider.when('/mapTest', {templateUrl: 'partials/testMap.html', controller: 'mapTestController'});
                 $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginController'});
@@ -20,6 +22,8 @@ var app = angular.module('myApp', [
                 $routeProvider.when('/pointofinterest', {templateUrl: 'partials/pointofinterest.html', controller: 'poicontroller'});
                 
                 $routeProvider.otherwise({redirectTo: '/404'});
+                
+                RestangularProvider.setBaseUrl('http://instabul.herokuapp.com/');
             }]);
 
 app.constant('REST', {
@@ -28,6 +32,10 @@ app.constant('REST', {
 
 app.service('daoUser', function($injector) {
   return $injector.get('daoUser.js');
+});
+
+app.service('daoAccounts', function($injector) {
+  return $injector.get('daoAccounts.js');
 });
 
 app.service('dummyData', function($injector) {
