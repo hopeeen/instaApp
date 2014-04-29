@@ -1,5 +1,5 @@
 
-app.controller('manageAccountCTRL', function($scope) {
+app.controller('manageAccountCTRL', function($scope, daoAccounts) {
   $scope.name = 'Petter Lundemo';
   $scope.email = 'petter_lundemo@hotmail.com';
   $scope.description = '';
@@ -16,7 +16,7 @@ app.controller('manageAccountCTRL', function($scope) {
     var fd = new FormData();
     //Take the first selected file
     fd.append("file", files[0]);
-
+alert("Starting upload");
     $http.post('../img/', fd, {
         withCredentials: true,
         headers: {'Content-Type': undefined },
@@ -24,6 +24,7 @@ app.controller('manageAccountCTRL', function($scope) {
     
 
 });
+alert("File uploaded!");
  };      
       
   
@@ -77,12 +78,20 @@ app.controller('manageAccountCTRL', function($scope) {
       
       if(error == false){
           alert("All is good");
+          
+          daoAccounts.update($scope.name, $scope.email, $scope.description, $scope.newpassword);
+          
       } else {
           alert("All is not good");
       }
       
   $scope.errors = errors;
      
+      
+            
+      
+      
+      
       
   }
   
