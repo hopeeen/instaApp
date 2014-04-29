@@ -3,26 +3,31 @@ function initCall() {
     angular.bootstrap(document.getElementById("map"), ['doc.ui-map']);
 }
 
-app.controller('mapTestController', ['$scope', function($scope) {
+app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
         $scope.myMarkers = [];
 
         $scope.myLocation;
 
-        $scope.directionsDisplay = new google.maps.DirectionsRenderer();
+        $scope.directionsDisplay;
+        
+        $rootScope.centerMap = new google.maps.LatLng(40.9970302, 28.9654876);
 
-        $scope.getCurrentLocation = function() {
+        $scope.getCurrentLocation = function(callback) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 $scope.myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                callback($scope.myLocation);
             })
         };
 
         $scope.resetView = function() {
-            $scope.getCurrentLocation();
-            $scope.myMap.panTo($scope.myLocation);
+            $scope.getCurrentLocation( function(loc){
+                $scope.myMap.panTo(loc);
+            });
         };
 
         $scope.addRoute = function(start, end, waypoints) {
+            $scope.directionsDisplay = new google.maps.DirectionsRenderer();
             var directionsService = new google.maps.DirectionsService();
             $scope.directionsDisplay.setMap($scope.myMap);
             if (start == null) {
@@ -49,12 +54,10 @@ app.controller('mapTestController', ['$scope', function($scope) {
             });
         };
 
-        $scope.mapOptions = function() {
-            var defaults = {
-                center: new google.maps.LatLng(40.9970302, 28.9654876),
-                zoom: 10, 
-                mapTypeId: google.maps.MapTypeId.ROADMAP};
-            
+        $scope.mapOptions = {
+            center: $rootScope.centerMap,
+            zoom: 9,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
         $scope.addMarker = function($event, $params) {

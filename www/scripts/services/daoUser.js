@@ -22,6 +22,7 @@ app.service('daoUser', function($location, $http, REST) {
     var words = CryptoJS.enc.Utf8.parse(username + ":" + password);
     var base64 = CryptoJS.enc.Base64.stringify(words);
     localStorage.userAuth = 'Basic ' + base64;
+    localStorage.username = username;
     $http.defaults.headers.common.Authorization = localStorage.userAuth;
 
     $http.get(REST.path + 'auth').success(function(result) {
