@@ -17,5 +17,21 @@ app.service('daoAccounts', function($location, $http, REST, Restangular) {
         });
  
     };
+    
+    
+    this.update = function(name, email, description, password){
+        alert("Hei");
+    Restangular.all('accounts').getList().then(function(accounts) {
+        var info = accounts;
+        alert("Kom inn her");
+    }, function(response) {
+        status = ("Error with status code " + response.status);
+    });
+    
+    alert(info);
+    alert(status);
+        
+        
+    }
  
 });
