@@ -233,8 +233,11 @@
                             interestName: 'Blue Moske',
                             interestLocation: 'Istanbul',
                             interestRating: '5.0',
-                            imgname: 'redmoske'
-
+                            imgname: 'redmoske',
+                            coordinates: {
+                                lat: 63.40850844459906,
+                                lng: 10.4425048828125,
+                            }
                         },
                         {
                             interestName: 'Red Moske',

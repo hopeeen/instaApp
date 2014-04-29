@@ -10,7 +10,7 @@
             <a ng-click="myMap.panTo(marker.getPosition())">Pan to Marker {{$index}}</a>
         </li>
     </ul>
-
+   
     <!-- this is the confusing part. we have to point the map marker directive
       at an existing google.maps.Marker object, so it can hook up events -->
     <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]"

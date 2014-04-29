@@ -11,7 +11,7 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
 
         $scope.directionsDisplay;
         
-        $rootScope.centerMap = new google.maps.LatLng(40.9970302, 28.9654876);
+        $scope.directionsService;
 
         $scope.getCurrentLocation = function(callback) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -21,14 +21,14 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
         };
 
         $scope.resetView = function() {
-            $scope.getCurrentLocation( function(loc){
+            $scope.getCurrentLocation(function(loc) {
                 $scope.myMap.panTo(loc);
             });
         };
 
         $scope.addRoute = function(start, end, waypoints) {
             $scope.directionsDisplay = new google.maps.DirectionsRenderer();
-            var directionsService = new google.maps.DirectionsService();
+            $scope.directionsService = new google.maps.DirectionsService();
             $scope.directionsDisplay.setMap($scope.myMap);
             if (start == null) {
                 start = $scope.myLocation;
@@ -47,7 +47,7 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
                     travelMode: google.maps.TravelMode.DRIVING
                 }
             }
-            directionsService.route(request, function(response, status) {
+            $scope.directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     $scope.directionsDisplay.setDirections(response);
                 }
@@ -55,7 +55,7 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
         };
 
         $scope.mapOptions = {
-            center: $rootScope.centerMap,
+            center: new google.maps.LatLng(40.9970302, 28.9654876),
             zoom: 9,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -82,6 +82,13 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
 
         $scope.setMarkerPosition = function(marker, lat, lng) {
             marker.setPosition(new google.maps.LatLng(lat, lng));
-        }
-        ;
+        };
+
+        angular.element(document).ready(function() {
+            if ($rootScope.centerMap != null) {
+                console.log('fuck it all: ' + $rootScope.centerMap);
+                $scope.myMap.panTo($rootScope.centerMap);
+                $rootScope.centerMap = null;
+            }
+        });
     }]);

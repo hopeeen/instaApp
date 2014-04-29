@@ -1,7 +1,14 @@
-app.controller('poicontroller', function($scope, dummyData) {
+app.controller('poicontroller', function($scope, $location, $rootScope, dummyData) {
     $scope.showPOIsearchfilter = false;
     $scope.interests = dummyData.getInterest();
-
+    
+    $scope.selectInterest = function(interest) {
+        $rootScope.centerMap = new google.maps.LatLng(interest.coordinates.lat,interest.coordinates.lng);
+        $rootScope.mapFrom = 'POI';
+        console.log($rootScope.centerMap);
+        $location.path("/mapTest");
+    };
+    
     $scope.showSearchFilterPOI = function() {
         $scope.showPOIsearchfilter = !$scope.showPOIsearchfilter;
         alert($scope.showPOIsearchfilter);
