@@ -20,7 +20,7 @@ var app = angular.module('myApp', [
                 $routeProvider.when('/achievements', {templateUrl: 'partials/achievement.html', controller: 'achievementsctrl'});
                 $routeProvider.when('/left-menu', {templateUrl: 'partials/leftmenu.html', controller: 'leftmenucontroller'});
                 $routeProvider.when('/pointofinterest', {templateUrl: 'partials/pointofinterest.html', controller: 'poicontroller'});
-                
+                $routeProvider.when('/', {redirectTo: '/mapTest'});
                 $routeProvider.otherwise({redirectTo: '/404'});
                 
                 RestangularProvider.setBaseUrl('http://instabul.herokuapp.com/');

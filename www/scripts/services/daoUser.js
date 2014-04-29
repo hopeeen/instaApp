@@ -30,7 +30,7 @@ app.service('daoUser', function($location, $http, REST) {
       if (typeof (successCallback) == 'function') {
         successCallback();
       }
-      $location.path("/");
+      $location.path("/mapTest");
 
     }).error(function(result) {
       if (typeof (errorCallback) == 'function') {

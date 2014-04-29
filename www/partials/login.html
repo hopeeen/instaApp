@@ -1,15 +1,14 @@
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/login.css" media="screen" />
 
 
 <div class="loginWrapper container" ng-controller="LoginController">
 
-    <h4> Login </h4>
+    <h1> Please log in </h1>
 
     <form ng-submit="login()">
-        <input ng-model="username" type="text" class="form-control" placeholder="Username" autofocus>
-        <input ng-model="password" type="password" class="form-control" placeholder="Password">
-        <input type="submit" value="Login" class="btn btn-primary" ng-disabled="!username || !password">
+        <input ng-model="username" type="text" class="topcoat-text-input" placeholder="Username" autofocus>
+        <input ng-model="password" type="password" class="topcoat-text-input" placeholder="Password">
+        <input type="submit" value="Login" class="topcoat-button" ng-disabled="!username || !password">
     </form>
 
     <div>Status: {{status}}</div>
