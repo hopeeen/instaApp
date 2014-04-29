@@ -1,14 +1,25 @@
 <link rel="stylesheet" type="text/css" href="./css/app.css" />
 <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
+
 <br>
 {{showPOIsearchfilter}}
 <div ng-show="showPOIsearchfilter">
    fdsfsdf  <input class="searchfield" ng-model="searchText" placeholder="Insert like words or something...">
 </div>
 <div ng-repeat="interests in interests | filter:searchText | orderBy:'interestRating' " class="interests">
-    <a ng-href="#/pointofinterest/{{poi.id}}">
-        <div class="container"><img ng-src="{{'./img/interests/' + interests.imgname + '.png'}}"/></div>
-        {{interests.interestName}} <br> {{interests.interestLocation}}
-        Rating:{{interests.interestRating}} / 10<br>
+   
+    <a ng-click="saveToLocal(interest)" ng-href="#/pointofinterest/{{poi.id}}">
+        <table class="interest" width="100%">
+            <tr>
+                <th><div class="container"><img ng-src="{{'./img/interests/' + interest.imgname + '.png'}}"/></div></th>
+            <th align="left"><b>{{interest.interestName}}</b> <br> <i>{{interest.interestLocation}}</i></th>
+            </tr>
+            <tr>
+
+                <td align="middle" colspan="2">Rating:{{interest.interestRating}} / 10<br>
+                    <hr>
+                </td>
+            </tr>
+        </table>
     </a>
 </div>

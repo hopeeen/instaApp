@@ -7,18 +7,27 @@ app.controller('mapTestController', ['$scope', function($scope) {
 
         $scope.myMarkers = [];
 
+        $scope.myLocation;
+
+        $scope.directionsDisplay = new google.maps.DirectionsRenderer();
+
+        $scope.getCurrentLocation = function() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                $scope.myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            })
+        };
+
         $scope.resetView = function() {
-            $scope.zoomMessage = 'Test';
-            $scope.myMap.panTo(new google.maps.LatLng(40.9970302, 28.9654876));
+            $scope.getCurrentLocation();
+            $scope.myMap.panTo($scope.myLocation);
         };
 
         $scope.addRoute = function(start, end, waypoints) {
             var directionsService = new google.maps.DirectionsService();
-            var directionsDisplay = new google.maps.DirectionsRenderer();
-            directionsDisplay.setMap($scope.myMap);
-            start = "Cankurtaran Mh., Kutlugün Sokak No:31, 34200 Fatih/Istanbul Province, Turkey";
-            end = "Demirtaş Mh., Mehmetpaşa Ykş., 34200 Fatih/Istanbul Province, Turkey";
-            waypoints = [{location: "Pertev Paşa Sk 1-21, Emin Sinan Mh., Fatih, Tyrkia"}];
+            $scope.directionsDisplay.setMap($scope.myMap);
+            if (start == null) {
+                start = $scope.myLocation;
+            }
             if (waypoints != null) {
                 var request = {
                     origin: start,
@@ -35,15 +44,17 @@ app.controller('mapTestController', ['$scope', function($scope) {
             }
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
-                    directionsDisplay.setDirections(response);
+                    $scope.directionsDisplay.setDirections(response);
                 }
             });
         };
 
-        $scope.mapOptions = {
-            center: new google.maps.LatLng(40.9970302, 28.9654876),
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+        $scope.mapOptions = function() {
+            var defaults = {
+                center: new google.maps.LatLng(40.9970302, 28.9654876),
+                zoom: 10, 
+                mapTypeId: google.maps.MapTypeId.ROADMAP};
+            
         };
 
         $scope.addMarker = function($event, $params) {
@@ -63,6 +74,7 @@ app.controller('mapTestController', ['$scope', function($scope) {
             $scope.currentMarkerLat = marker.getPosition().lat();
             $scope.currentMarkerLng = marker.getPosition().lng();
             $scope.myInfoWindow.open($scope.myMap, marker);
+            $scope.currentLatLng = marker.getPosition();
         };
 
         $scope.setMarkerPosition = function(marker, lat, lng) {

@@ -9,5 +9,13 @@ window.onload = function () {
             cl.add('left-nav');
         }
     };
+    
+    var slideMenuItem = document.getElementById('slideMenu');
+    var clst = document.body.classList;
+    slideMenuItem.onclick = function (e) {
+        if (clst.contains('left-nav')) {   
+            clst.remove('left-nav');
+        }
+    };
  
 };

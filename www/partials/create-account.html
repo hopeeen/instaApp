@@ -1,6 +1,4 @@
- 
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />  
-<!--<link rel="stylesheet" type="text/css" href="./css/create-account.css" /> -->  
+<link rel="stylesheet" type="text/css" href="./css/create-account.css" />
 <div class="SignUp">
  
     <div class="container">
@@ -11,7 +9,7 @@
                 <!-- EMAIL -->
                 <div class="form-group"  ng-class="{ 'has-error' : registerForm.email.$invalid && !registerForm.email.$pristine }">
                     <label>Email</label>
-                    <input type="email" name="email" class="form-control" ng-model="user.email" required>
+                    <input type="email" name="email" class="topcoat-text-input" ng-model="user.email" required>
                     <div class="help-block" ng-show="registerForm.email.$invalid && !registerForm.email.$pristine" >
                         <p ng-show="registerForm.email.$error.email"> Enter a valid email.</p>
                         <p ng-show="registerForm.email.$error.required"> Email required.</p>
@@ -20,7 +18,7 @@
                 <!-- PASSWORD -->
                 <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine}">        
                     <label>Password</label>
-                    <input class="form-control" type="password" name="password" ng-model="user.password"  placeholder='Password' ng-minlength="6" ng-maxlength="30" required/>
+                    <input class="topcoat-text-input" type="password" name="password" ng-model="user.password"  placeholder='Password' ng-minlength="6" ng-maxlength="30" required/>
                     <div class="help-block" ng-show="registerForm.password.$invalid && !registerForm.password.$pristine">
                         <p ng-show="registerForm.password.$error.minlength">Password to short.</p>
                         <p ng-show="registerForm.password.$error.maxlength">Password to long.</p>
@@ -30,7 +28,7 @@
                 <!-- RETYPE PASSWORD -->
                 <div class="form-group" ng-class="{ 'has-error' : registerForm.repassword.$invalid && !registerForm.repassword.$pristine || user.password !== user.repassword}">        
                     <label>Confirm Password</label>
-                    <input class="form-control" type="password" name="repassword" ng-model="user.repassword" placeholder='Confirm Password' required/>
+                    <input class="topcoat-text-input" type="password" name="repassword" ng-model="user.repassword" placeholder='Confirm Password' required/>
                     <div class="help-block" ng-show="registerForm.repassword.$invalid && !registerForm.repassword.$pristine || user.password !== user.repassword">
                         <p ng-show="registerForm.repassword.$error.maxlength">Password required.</p>
                         <p ng-if="user.password !== user.repassword">Password mismatch</p>
@@ -39,7 +37,7 @@
  
              
  
-                <button type="submit" class="btn btn-primary" ng-disabled="!registerForm.$dirty || registerForm.$dirty && registerForm.$invalid">Submit</button>
+                <button type="submit" class="topcoat-button" ng-disabled="!registerForm.$dirty || registerForm.$dirty && registerForm.$invalid">Submit</button>
                 <button class="btn btn-default" ng-click="showTerms()">Terms </button>
                 {{$scope.email}}
             </form>

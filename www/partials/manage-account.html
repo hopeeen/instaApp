@@ -1,101 +1,58 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
+<style>
+    .topcoat-button--cta {
+        background-color: red;
+    }
+</style>
+<div ng-repeat="error in errors">
+    {{error}}
+</div>
+<div class="topcoat-list">
+    <h3 class="topcoat-list__header">Manage Account</h3>
+    <ul class="topcoat-list__container">
+        <li class="topcoat-list__item" ng-click="showname = !showname">Change name</li>
+        <li class="topcoat-list__item" ng-hide="showname">
+            <label class="manage-label">Name:</label><br>
+            <input class="topcoat-text-input" id="focusedInput" type="text" ng-model="name"></li>
 
-  <head>
-    <meta charset="utf-8" />
-    <title>Manage account</title>
-    
-<link rel="stylesheet" type="text/css" href="./css/manage-account.css" />  
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />  
-    <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" data-semver="1.0.7"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
- <script type="text/javascript" src="../scripts/controllers/manage-account.js"></script>
-  </head>
+        <li class="topcoat-list__item" ng-click="showemail = !showemail">Change email</li>
+        <li class="topcoat-list__item" ng-hide="showemail">
 
-  <body ng-controller="manageAccountCTRL">
-      
-      <div ng-repeat="errors in errors">
-          {{errors}}
-      </div>
-      <!--<div class="topcoat-list">-->
-      <ul class="list-group">
-          
-          
-          <li class="list-group-item" ng-click="showname = !showname">Change name</li>
-          <li class="list-group-item" ng-hide="showname">
-              <label class="manage-label">Name:</label></br>
-      <input class="form-control" id="focusedInput" type="text" ng-model="name"></li>
-          
-          <li class="list-group-item" ng-click="showemail = !showemail">Change email</li>
-          <li class="list-group-item" ng-hide="showemail">
-      
-              <label class="manage-label">E-mail:</label></br>
-      <input class="form-control" id="focusedInput" type="text" ng-model="email">
-              
-          </li>
-          
-                    
-          <li class="list-group-item" ng-click="showpic = !showpic">Edit profile picture</li>
-          <li class="list-group-item" ng-hide="showpic">
-      
-              <label class="manage-label"></br>
-                  
-              </label></br>
-              <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-   
-              
-          </li>
-      
-          
-          <li class="list-group-item" ng-click="showdesc = !showdesc">Change description</li>
-          <li class="list-group-item" ng-hide="showdesc">
-              <label class="manage-label">Description:</label></br>
-              <textarea class="form-control" rows="3" id="textArea" ng-model="description"></textarea>
-          </li>
-          
-          <li class="list-group-item" ng-click="shownewp = !shownewp">Change password</li>
-          <li class="list-group-item" ng-hide="shownewp">
-              
-              <label class="manage-label">New password:</label></br><input class="form-control" id="focusedInput" type="text" ng-model="newpassword"/></br>
-              <label class="manage-label">Old password:</label></br><input class="form-control" id="focusedInput" type="text" ng-model="oldpassword"/>
-              
-              
-          </li>
-          
-          <li class="list-group-item" ng-click="showdelete = !showdelete">Delete your account<span class="badge">!</span></li>
-          <li class="list-group-item" ng-hide="showdelete">
-              <label class="deleteaccount">If you delete your account, you can NOT get your account back</label>
-              
-              </br>
-              <label class="manage-label">Password:</label></br>
-              <input class="form-control" id="focusedInput" type="text" ng-model="verifypassword"/></br>
-             <a class="bigredbutton" ng-click="delete()">DELETE YOUR ACCOUNT</a>
-              
-          </li>
-          <li class="list-group-item">      
-    <button type="button" class="btn btn-primary" ng-click="pushbutton()">Save</button>
-  
-          </li>
-      </ul>
+            <label class="manage-label">E-mail:</label><br>
+            <input class="topcoat-text-input" id="focusedInput" type="text" ng-model="email">
+        </li>
 
-      
-     <!-- </div>-->
-  
-    
-      
-      
-      
-    <!--
-    <a ng-href='#here' ng-click='go("test")' >click me</a>
-    <a ng-click='getItem()' href='' >Get From Service {{msg}}</a>
-    <div style='height:1000px'>
-      
-      <a id='here'></a>
-     
-    </div>
-     <h1>here</h1>
-    -->
-  </body>
+        <li class="topcoat-list__item" ng-click="showpic = !showpic">Edit profile picture</li>
+        <li class="topcoat-list__item" ng-hide="showpic">
+            <label class="manage-label"><br>
+            </label><br>
+            <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+        </li>
+        
+        <li class="topcoat-list__item" ng-click="showdesc = !showdesc">Change description</li>
+        <li class="topcoat-list__item" ng-hide="showdesc">
+            <label class="manage-label">Description:</label><br>
+            <textarea class="topcoat-text-input" rows="3" id="textArea" ng-model="description"></textarea>
+        </li>
 
-</html>
+        <li class="topcoat-list__item" ng-click="shownewp = !shownewp">Change password</li>
+        <li class="topcoat-list__item" ng-hide="shownewp">
+            <label class="manage-label">New password:</label><br>
+            <input class="topcoat-text-input" id="focusedInput" type="text" ng-model="newpassword"/><br>
+            <label class="manage-label">Old password:</label><br>
+            <input class="topcoat-text-input" id="focusedInput" type="text" ng-model="oldpassword"/>
+        </li>
+
+        <li class="topcoat-list__item" ng-click="showdelete = !showdelete">Delete your account<span class="badge">!</span></li>
+        <li class="topcoat-list__item" ng-hide="showdelete">
+            <label class="deleteaccount">If you delete your account, you can NOT get your account back</label>
+            <br>
+            <label class="manage-label">Password:</label><br>
+            <input class="topcoat-text-input" id="focusedInput" type="text" ng-model="verifypassword"/><br>
+            <button class="topcoat-button--cta" ng-click="delete()">DELETE YOUR ACCOUNT</button>
+        </li>
+        
+        <li class="topcoat-list__item">      
+            <button type="button" class="topcoat-button" ng-click="pushbutton()">Save</button>
+        </li>
+    </ul>
+</div>
