@@ -1,11 +1,11 @@
 <link rel="stylesheet" type="text/css" href="./css/app.css" />
 <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
-
 <br>
-{{showPOIsearchfilter}}
-<div ng-show="showPOIsearchfilter">
-   fdsfsdf  <input class="searchfield" ng-model="searchText" placeholder="Insert like words or something...">
+
+<div >
+    <input class="searchfield topcoat-search-input--large" ng-model="searchText" placeholder="Insert like words or something...">
 </div>
+<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
 <div ng-repeat="interests in interests | filter:searchText | orderBy:'interestRating' " class="interests">
    
     <a ng-click="saveToLocal(interest)" ng-href="#/pointofinterest/{{poi.id}}">

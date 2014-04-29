@@ -1,5 +1,4 @@
 app.controller('poicontroller', function($scope, dummyData) {
-
     $scope.showPOIsearchfilter = false;
     $scope.interests = dummyData.getInterest();
 
@@ -9,11 +8,6 @@ app.controller('poicontroller', function($scope, dummyData) {
     };
 
   
-    $scope.saveToLocal = function(interest){
-        window.localStorage.setItem('selectedInterest', interest);
-
-    };
-    
     $scope.interests2 = [{
             interestName: 'Blue Moske',
             interestLocation: 'Istanbul',
@@ -25,26 +19,12 @@ app.controller('poicontroller', function($scope, dummyData) {
             interestLocation: 'Istanbul',
             interestRating: '6.0'
 
-
         },
-        {
-
-            interestName: 'Red Moske',
-            interestLocation: 'Istanbul',
-            interestRating: '6.0'
-            },
         {
             interestName: 'Pink Moske',
             interestLocation: 'Istanbul',
             interestRating: '3.0'
 
-
-        },
-        {
-
-            interestName: 'Pink Moske',
-            interestLocation: 'Istanbul',
-            interestRating: '3.0'
         },
         {
             interestName: 'Brown Moske',
