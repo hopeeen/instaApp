@@ -1,21 +1,14 @@
-    <thead>
-        <link rel="stylesheet" type="text/css" href="./css/app.css" />
-        <link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
-
-    <tbody>
-        <div ng-repeat="interests in interests" class="interests">
-            <a ng-href="#/pointofinterest/{{poi.id}}">
-        <table class="interests" width="100%">
-  <tr>
-      <th><div class="container"><img ng-src="{{'./img/interests/' + interests.imgname+'.png'}}"/></div></th>
-        <th align="left"><b>{{interests.interestName}}</b> <br> <i>{{interests.interestLocation}}</i></th>
-  </tr>
-  <tr>
-      
-      <td align="middle" colspan="2">Rating:{{interests.interestRating}} / 10<br>
-          <hr>
-      </td>
-  </tr>
-</table>
-            </a>
+<link rel="stylesheet" type="text/css" href="./css/app.css" />
+<link rel="stylesheet" href="./css/pointofinterest.css" type="text/css">
+<br>
+{{showPOIsearchfilter}}
+<div ng-show="showPOIsearchfilter">
+   fdsfsdf  <input class="searchfield" ng-model="searchText" placeholder="Insert like words or something...">
+</div>
+<div ng-repeat="interests in interests | filter:searchText | orderBy:'interestRating' " class="interests">
+    <a ng-href="#/pointofinterest/{{poi.id}}">
+        <div class="container"><img ng-src="{{'./img/interests/' + interests.imgname + '.png'}}"/></div>
+        {{interests.interestName}} <br> {{interests.interestLocation}}
+        Rating:{{interests.interestRating}} / 10<br>
+    </a>
 </div>
