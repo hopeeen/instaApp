@@ -72,7 +72,7 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$loca
 
         $scope.mapOptions = {
             center: new google.maps.LatLng(40.9970302, 28.9654876),
-            zoom: 9,
+            zoom: 13,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
