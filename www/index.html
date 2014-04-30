@@ -39,23 +39,19 @@
                     <li class="topcoat-list__item side-nav__list__item">
                         <a href="#/pointofinterest" class="side-nav__button">Points of Interest</a>
                     </li>
-                    <li class="topcoat-list__item side-nav__list__item">
+                    <li class="topcoat-list__item side-nav__list__item" ng-show="userLoggedIn">
                         <a href="#/manage-account" class="side-nav__button">Manage Account</a>
                     </li>
                 </ul>
                 <div class="current-active-user" ng-show="userLoggedIn">
-                    <h1>You are logged in!</h1>
-                    <img src="./css/topcoat/img/person-placeholder.jpg"/>
-                    <div id="user-data" class="topcoat-list__container">
-                        <ul class="topcoat-list">
-                            <li class="topcoat-list__item side-nav__list__item">
-                                <a href="#/manage-account" class="side-nav__button">Manage Account</a>
-                            </li>
-                        </ul>
+                    <div id="user-data">
+                        <img src="./css/topcoat/img/person-placeholder.jpg"/>
+                        <p>Logged in as:</p>
+                        <h2>{{displayName}}</h2>
                     </div>
                     <button class="topcoat-button" ng-click="signOut()">Sign out</button>
                 </div>
-                <div ng-show="!userLoggedIn">
+                <div id="slideMenuProfile" ng-show="!userLoggedIn">
                     <a href="#/login">
                         <button class="topcoat-button">Log in</button>
                     </a>

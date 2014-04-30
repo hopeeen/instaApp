@@ -1,7 +1,7 @@
-window.onload = function () {
- 
+window.onload = function() {
+
     var slideMenuButton = document.getElementById('slide-menu-button');
-    slideMenuButton.onclick = function (e) {
+    slideMenuButton.onclick = function(e) {
         var cl = document.body.classList;
         if (cl.contains('left-nav')) {
             cl.remove('left-nav');
@@ -9,13 +9,21 @@ window.onload = function () {
             cl.add('left-nav');
         }
     };
-    
+
     var slideMenuItem = document.getElementById('slideMenu');
     var clst = document.body.classList;
-    slideMenuItem.onclick = function (e) {
-        if (clst.contains('left-nav')) {   
+    slideMenuItem.onclick = function(e) {
+        if (clst.contains('left-nav')) {
             clst.remove('left-nav');
         }
     };
- 
+
+    var slideMenuItemProfile = document.getElementById('slideMenuProfile');
+    var clst = document.body.classList;
+    slideMenuItemProfile.onclick = function(e) {
+        if (clst.contains('left-nav')) {
+            clst.remove('left-nav');
+        }
+    };
+
 };
