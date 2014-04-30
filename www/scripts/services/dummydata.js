@@ -230,34 +230,50 @@
                 
                     getInterest: function() {
                     var interests = [{
-                            interestName: 'Blue Moske',
-                            interestLocation: 'Istanbul',
-                            interestRating: '5.0',
-                            imgname: 'redmoske',
+                            name: 'Blue Moske',
+                            location: 'Istanbul',
+                            rating: '5.0',
+                            category: 'mosque',
                             coordinates: {
                                 lat: 63.40850844459906,
-                                lng: 10.4425048828125,
-                            }
+                                lng: 10.4425048828125
+                            },
+                            details: 'A Mosque. It is blue.'
                         },
                         {
-                            interestName: 'Red Moske',
-                            interestLocation: 'Istanbul',
-                            interestRating: '6.0',
-                            imgname: 'redmoske'
+                            name: 'Hagia Sofia',
+                            location: 'Istanbul',
+                            rating: '5.0',
+                            category: 'church',
+                            coordinates: {
+                                lat: 41.00814350872298,
+                                lng: 28.98244857788086
+                            },
+                            details: 'A big church.'
 
                         },
                         {
-                            interestName: 'Pink Moske',
-                            interestLocation: 'Istanbul',
-                            interestRating: '3.0',
-                            imgname: 'pinkmoske'
+                            name: 'Yeditepe university',
+                            location: 'Istanbul',
+                            rating: '11.0',
+                            category: 'mosque',
+                            coordinates: {
+                                lat: 40.97367726477833,
+                                lng: 29.153079986572266
+                            },
+                            details: 'University for clever people'
 
                         },
                         {
-                            interestName: 'Brown Moske',
-                            interestLocation: 'Istanbul',
-                            interestRating: '1.0',
-                            imgname: 'brownmoske'
+                            name: 'Bridge to Asia',
+                            location: 'Istanbul',
+                            rating: '5.0',
+                            category: 'mosque',
+                            coordinates: {
+                                lat: 41.04540766204396,
+                                lng: 29.034419059753418
+                            },
+                            details: 'A long bridge. Leads to asia.'
 
                         }];
                     return interests;
