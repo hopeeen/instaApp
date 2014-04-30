@@ -3,7 +3,7 @@ function initCall() {
     angular.bootstrap(document.getElementById("map"), ['doc.ui-map']);
 }
 
-app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', function($scope, $rootScope, dummyData) {
+app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$location', function($scope, $rootScope, dummyData, $location) {
 
         $scope.interests = [];
 
@@ -95,6 +95,16 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', functi
             $scope.currentMarkerLng = marker.getPosition().lng();
             $scope.myInfoWindow.open($scope.myMap, marker);
             $scope.currentLatLng = marker.getPosition();
+        };
+
+        $scope.goToPOIDetails = function(name) {
+            for (i = 0; i < $scope.interests.length; i++) {
+                if (name == $scope.interests[i].name) {
+                    $rootScope.chosenInterest = $scope.interests[i];
+                    console.log($rootScope.chosenInterest);
+                    $location.path("/pointofinterest");
+                }
+            }
         };
 
         $scope.setMarkerPosition = function(marker, lat, lng) {

@@ -10,7 +10,7 @@
     <div ui-map-info-window="myInfoWindow">
         <h1>{{currentMarkerName}}</h1>
         <br />
-        <a ng-href="">Description</a>
+        <a ng-click="goToPOIDetails(currentMarkerName)">Description</a>
         <br />
         <a ng-click="addRoute(myLocation, currentLatLng, null)">Trace Route</a>
     </div>
