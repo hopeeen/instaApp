@@ -27,6 +27,7 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
         };
 
         $scope.addRoute = function(start, end, waypoints) {
+            $scope.getCurrentLocation();
             $scope.directionsDisplay = new google.maps.DirectionsRenderer();
             $scope.directionsService = new google.maps.DirectionsService();
             $scope.directionsDisplay.setMap($scope.myMap);
