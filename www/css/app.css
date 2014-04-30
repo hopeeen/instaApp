@@ -262,6 +262,13 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 .current-active-user img {
     width: 20%;
     margin-left: 10%;
+    margin-right: 10px;
+    float: left;
+}
+
+#user-data {
+    margin-bottom: 15px;
+    height: 60px;
 }
 
 
