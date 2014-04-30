@@ -124,6 +124,8 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$loca
             $scope.interests = dummyData.getInterest();
             console.log($scope.interests);
             for (a = 0; a < $scope.interests.length; a++) {
+                if(($rootScope.chosenCategory == null || typeof $rootScope.chosenCategory == 'undefined' || $scope.interests[a].category == $rootScope.chosenCategory ) 
+                        && ($rootScope.minRating == null || typeof $rootScope.minRating == 'undefined' || $scope.interests[a].rating > $rootScope.minRating))
                 console.log('whoa: ' + $scope.interests[a].name);
                 $scope.latlng = new google.maps.LatLng($scope.interests[a].coordinates.lat, $scope.interests[a].coordinates.lng);
                 $scope.myMarkers.push(new google.maps.Marker({

@@ -20,6 +20,7 @@ var app = angular.module('myApp', [
                 $routeProvider.when('/achievements', {templateUrl: 'partials/achievement.html', controller: 'achievementsctrl'});
                 $routeProvider.when('/left-menu', {templateUrl: 'partials/leftmenu.html', controller: 'leftmenucontroller'});
                 $routeProvider.when('/pointofinterest', {templateUrl: 'partials/pointofinterest.html', controller: 'poicontroller'});
+                $routeProvider.when('/mapSettings', {templateUrl: 'partials/mapSettings.html', controller: 'mapsettingcontroller'});
                 
                 $routeProvider.when('/', {redirectTo: '/mapTest'});
                 $routeProvider.otherwise({redirectTo: '/404'});
