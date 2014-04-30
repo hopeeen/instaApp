@@ -1,11 +1,11 @@
-app.controller('LoginController', function($scope, daoUser) {
+app.controller('LoginController', function($scope, $rootScope, daoUser) {
   $scope.status = "Nothing to report";
 
   $scope.login = function() {
     daoUser.login($scope.username, $scope.password, function() {
-      $scope.status = "Successful login"
+      $scope.status = "Successful login";
     }, function() {
-      $scope.status = "Login error"
+      $scope.status = "Login error";
       $scope.password="";
     });
   };
