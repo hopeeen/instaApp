@@ -1,14 +1,15 @@
 
-app.controller('manageAccountCTRL', function($scope, daoAccounts) {
-  $scope.name = 'Petter Lundemo';
-  $scope.email = 'petter_lundemo@hotmail.com';
-  $scope.description = '';
+app.controller('manageAccountCTRL', function($scope, daoUser) {
+  $scope.name = localStorage.firstname + " " + localStorage.lastname;
+  $scope.email = localStorage.username;
+  $scope.description = localStorage.description;
   $scope.showname = true;
   $scope.showemail = true;
   $scope.showdesc = true;
   $scope.shownewp = true;
   $scope.showdelete = true;
   $scope.showpic = true;
+ 
  
  
   
@@ -77,13 +78,10 @@ alert("File uploaded!");
       
       
       if(error == false){
-          alert("All is good");
+   alert("First");
+          daoUser.update($scope.name, $scope.email, $scope.description, $scope.newpassword, $scope.oldpassword);
+  
           
-          daoAccounts.update($scope.name, $scope.email, $scope.description, $scope.newpassword);
-          
-      } else {
-          alert("All is not good");
-      }
       
   $scope.errors = errors;
      
@@ -94,6 +92,8 @@ alert("File uploaded!");
       
       
   }
+  };
+  
   
   $scope.validate = function(variable){
      var pattern = /[^0-9a-zA-Z- ]+/g;

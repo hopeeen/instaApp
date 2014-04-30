@@ -3,11 +3,13 @@ function initCall() {
     angular.bootstrap(document.getElementById("map"), ['doc.ui-map']);
 }
 
-app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', function($scope, $rootScope, dummyData) {
-        
+app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$location', function($scope, $rootScope, dummyData, $location) {
+
         $scope.interests = [];
-        
+
         $scope.myMarkers = [];
+
+        $scope.userMarker;
 
         $scope.myLocation;
 
@@ -18,6 +20,17 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', functi
         $scope.getCurrentLocation = function(callback) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 $scope.myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                $scope.userMarker = new google.maps.Marker({
+                    map: $scope.myMap,
+                    position: $scope.myLocation,
+                    title: 'Your position',
+                    clickable: false,
+                    flat: true,
+                    icon: {
+                        url: './img/userloc.png',
+                        scaledSize: new google.maps.Size(40, 40)
+                    }
+                });
                 callback($scope.myLocation);
             })
         };
@@ -30,7 +43,7 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', functi
 
         $scope.addRoute = function(start, end, waypoints) {
             $scope.getCurrentLocation();
-            $scope.directionsDisplay = new google.maps.DirectionsRenderer();
+            $scope.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
             $scope.directionsService = new google.maps.DirectionsService();
             $scope.directionsDisplay.setMap($scope.myMap);
             if (start == null) {
@@ -77,10 +90,21 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', functi
 
         $scope.openMarkerInfo = function(marker) {
             $scope.currentMarker = marker;
+            $scope.currentMarkerName = marker.getTitle();
             $scope.currentMarkerLat = marker.getPosition().lat();
             $scope.currentMarkerLng = marker.getPosition().lng();
             $scope.myInfoWindow.open($scope.myMap, marker);
             $scope.currentLatLng = marker.getPosition();
+        };
+
+        $scope.goToPOIDetails = function(name) {
+            for (i = 0; i < $scope.interests.length; i++) {
+                if (name == $scope.interests[i].name) {
+                    $rootScope.chosenInterest = $scope.interests[i];
+                    console.log($rootScope.chosenInterest);
+                    $location.path("/pointofinterest");
+                }
+            }
         };
 
         $scope.setMarkerPosition = function(marker, lat, lng) {
@@ -99,13 +123,15 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', functi
             }
             $scope.interests = dummyData.getInterest();
             console.log($scope.interests);
-            for(a=0; a < $scope.interests.length; a++){
+            for (a = 0; a < $scope.interests.length; a++) {
                 console.log('whoa: ' + $scope.interests[a].name);
-                $scope.latlng = new google.maps.LatLng($scope.interests[a].coordinates.lat,$scope.interests[a].coordinates.lng);
+                $scope.latlng = new google.maps.LatLng($scope.interests[a].coordinates.lat, $scope.interests[a].coordinates.lng);
                 $scope.myMarkers.push(new google.maps.Marker({
                     map: $scope.myMap,
-                    position: $scope.latlng
+                    position: $scope.latlng,
+                    title: $scope.interests[a].name
                 }));
             }
+            $scope.myMarkers.push($scope.userMarker);
         });
     }]);
