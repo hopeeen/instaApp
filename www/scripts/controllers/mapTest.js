@@ -3,14 +3,16 @@ function initCall() {
     angular.bootstrap(document.getElementById("map"), ['doc.ui-map']);
 }
 
-app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $rootScope) {
-
+app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', function($scope, $rootScope, dummyData) {
+        
+        $scope.interests = [];
+        
         $scope.myMarkers = [];
 
         $scope.myLocation;
 
         $scope.directionsDisplay;
-        
+
         $scope.directionsService;
 
         $scope.getCurrentLocation = function(callback) {
@@ -90,6 +92,20 @@ app.controller('mapTestController', ['$scope', '$rootScope', function($scope, $r
                 console.log('fuck it all: ' + $rootScope.centerMap);
                 $scope.myMap.panTo($rootScope.centerMap);
                 $rootScope.centerMap = null;
+            } else {
+                $scope.getCurrentLocation(function(loc) {
+                    $scope.myMap.panTo(loc);
+                });
+            }
+            $scope.interests = dummyData.getInterest();
+            console.log($scope.interests);
+            for(a=0; a < $scope.interests.length; a++){
+                console.log('whoa: ' + $scope.interests[a].name);
+                $scope.latlng = new google.maps.LatLng($scope.interests[a].coordinates.lat,$scope.interests[a].coordinates.lng);
+                $scope.myMarkers.push(new google.maps.Marker({
+                    map: $scope.myMap,
+                    position: $scope.latlng
+                }));
             }
         });
     }]);
