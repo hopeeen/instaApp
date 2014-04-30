@@ -13,3 +13,8 @@
 #map {
     height: 100%;
 }
+
+.infoWindow {
+    text-align: center;
+    padding-bottom: 10px;
+}

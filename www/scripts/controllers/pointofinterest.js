@@ -24,6 +24,11 @@ app.controller('poicontroller', function($scope, $location, $rootScope, dummyDat
         $scope.showPOIsearchfilter = !$scope.showPOIsearchfilter;
         alert($scope.showPOIsearchfilter);
     };
+    
+    $scope.goBack = function() {
+        $scope.listPOI = true;
+        $scope.detailPOI = false;
+    }
 
     angular.element(document).ready(function() {
         if (typeof $rootScope.chosenInterest != 'undefined' && $rootScope.chosenInterest != null) {

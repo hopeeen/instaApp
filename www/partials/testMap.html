@@ -7,11 +7,12 @@
          ui-event="{'map-click': 'openMarkerInfo(marker)'}">
     </div>
 
-    <div ui-map-info-window="myInfoWindow">
+    <div ui-map-info-window="myInfoWindow" class="infoWindow">
         <h1>{{currentMarkerName}}</h1>
         <br />
         <a ng-click="goToPOIDetails(currentMarkerName)">Description</a>
         <br />
+        <hr />
         <a ng-click="addRoute(myLocation, currentLatLng, null)">Trace Route</a>
     </div>
 
