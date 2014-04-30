@@ -85,7 +85,6 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$loca
 
         $scope.setZoomMessage = function(zoom) {
             $scope.zoomMessage = 'You just zoomed to ' + zoom + '!';
-            console.log(zoom, 'zoomed');
         };
 
         $scope.openMarkerInfo = function(marker) {
@@ -101,7 +100,6 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$loca
             for (i = 0; i < $scope.interests.length; i++) {
                 if (name == $scope.interests[i].name) {
                     $rootScope.chosenInterest = $scope.interests[i];
-                    console.log($rootScope.chosenInterest);
                     $location.path("/pointofinterest");
                 }
             }
@@ -113,7 +111,6 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$loca
 
         angular.element(document).ready(function() {
             if ($rootScope.centerMap != null) {
-                console.log('fuck it all: ' + $rootScope.centerMap);
                 $scope.myMap.panTo($rootScope.centerMap);
                 $rootScope.centerMap = null;
             } else {
@@ -122,11 +119,9 @@ app.controller('mapTestController', ['$scope', '$rootScope', 'dummyData', '$loca
                 });
             }
             $scope.interests = dummyData.getInterest();
-            console.log($scope.interests);
             for (a = 0; a < $scope.interests.length; a++) {
                 if(($rootScope.chosenCategory == null || typeof $rootScope.chosenCategory == 'undefined' || $scope.interests[a].category == $rootScope.chosenCategory ) 
                         && ($rootScope.minRating == null || typeof $rootScope.minRating == 'undefined' || $scope.interests[a].rating > $rootScope.minRating))
-                console.log('whoa: ' + $scope.interests[a].name);
                 $scope.latlng = new google.maps.LatLng($scope.interests[a].coordinates.lat, $scope.interests[a].coordinates.lng);
                 $scope.myMarkers.push(new google.maps.Marker({
                     map: $scope.myMap,
