@@ -3,7 +3,7 @@
             return {
                 getSubjects: function() {
                     var subjects = [{
-                            name: 'Matematikk 2',
+                            name: 'sf',
                             id: 1,
                             code: 'TDAT4200',
                             queueActive: true,
