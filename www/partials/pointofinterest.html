@@ -3,8 +3,8 @@
 <script src="scripts/directives/SocialSharing.js"></script>
 <br>
 
-<div >
-    <input class="searchfield topcoat-search-input--large" ng-model="searchText" placeholder="Insert like words or something...">
+<div style="padding-left:1%;padding-right: 1%;">
+    <input class="searchfield topcoat-search-input" ng-model="searchText" placeholder="Insert like words or something..." style="width:100%;">
 </div>
 <button ng-click="window.plugins.socialsharing.share('Message only')">message only</button>
 <div ng-repeat="interest in interests| filter:searchText | orderBy:'interestRating' " class="interests">
