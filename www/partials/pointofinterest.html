@@ -3,19 +3,19 @@
 <script src="scripts/directives/SocialSharing.js"></script>
 <br>
 
-<div >
-    <input class="searchfield topcoat-search-input--large" ng-model="searchText" placeholder="Insert like words or something...">
+<div style="padding-left:1%;padding-right: 1%;">
+    <input class="searchfield topcoat-search-input" ng-model="searchText" placeholder="Insert like words or something..." style="width:100%;">
 </div>
 <button ng-click="window.plugins.socialsharing.share('Message only')">message only</button>
 <div ng-repeat="interest in interests| filter:searchText | orderBy:'interestRating' " class="interests">
     <table class="interest" width="100%" ng-click="selectInterest(interest)">
         <tr>
-            <th><div class="container"><img ng-src="{{'./img/interests/' + interest.imgname + '.png'}}"/></div></th>
-        <th align="left"><b>{{interest.interestName}}</b> <br> <i>{{interest.interestLocation}}</i></th>
+            <th><div class="container"><img ng-src="{{'./img/interests/' + interest.category + '.png'}}"/></div></th>
+        <th align="left"><b>{{interest.name}}</b> <br> <i>{{interest.location}}</i></th>
         </tr>
         <tr>
 
-            <td align="middle" colspan="2">Rating:{{interest.interestRating}} / 10<br>
+            <td align="middle" colspan="2">Rating:{{interest.rating}} / 10<br>
                 <hr>
             </td>
         </tr>

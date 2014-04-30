@@ -1,72 +1,56 @@
 <div class="topcoat-tab-bar full">
     <label class="topcoat-tab-bar__item">
         <input type="radio" name="tab-bar">
-            <button ng-click="opentabMA()" class="topcoat-tab-bar__button full">My Achievements</button>
+        <button ng-click="opentabMA()" class="topcoat-tab-bar__button full">My Achievements</button>
     </label>
-        <label class="topcoat-tab-bar__item">
+    <label class="topcoat-tab-bar__item">
         <input type="radio" name="tab-bar">
-            <button ng-click="opentabLOA()" class="topcoat-tab-bar__button full">List of Achievements</button>
+        <button ng-click="opentabLOA()" class="topcoat-tab-bar__button full">List of Achievements</button>
     </label>
-        <label class="topcoat-tab-bar__item">
+    <label class="topcoat-tab-bar__item">
         <input type="radio" name="tab-bar">
-            <button ng-click="opentabLeaderboard()" class="topcoat-tab-bar__button full">Leaderboard</button>
+        <button ng-click="opentabLeaderboard()" class="topcoat-tab-bar__button full">Leaderboard</button>
     </label>
 </div>
 
 <div class="tabContent" id="myachievements" ng-show="showMA">
 
     <h1>My achievements</h1>
-
-    <div class="container" ng-repeat="achievement in achievement">
-        <table class="table table-striped table-hover ">
-            <thead>
-                <tr>
-                    <th>Completed</th>
-                    <th>Achievement</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="../img/{done}.png"></td>
-                    <td>{{achievement.name}}</td>
-                    <td>{{achievement.points}}</td>
-                </tr>
-                <tr>
-                    <td>Total points</td>
-                    <td>{{achievement.mytotalpoints}}</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
+    <div class="listLeftA">Status</div>
+    <div class="listCenterA">Achievement</div>
+    <div class="listRightA">Points</div>
+    <ul>
+        <li ng-repeat="achievement in achievement">
+            <div class="listLeftA"><img src="./img/done.png"></div>
+            <div class="listCenterA">{{achievement.name}}</div>
+            <div class="listRightA">{{achievement.points}}</div>
+                {{achievement.mytotalpoints}}
+            
+        </li>
+    </ul>
 </div>
 
 <div class="tabContent" id="listofachievements" ng-show="showLOA">
 
     <h1>List of Achievements</h1>
+    <div class="listLeftA"></div><div class="listCenterA">Achievement</div><div class="listRightA">Points</div>
 
-    <div class="container" ng-repeat="achievement in achievement">
-        <table class="table table-striped table-hover ">
-            <thead>
-                <tr>
-                    <th>Completed</th>
-                    <th>Achievement</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="../img/{done}.png"></td>
-                    <td>
-                        <b>{{achievement.name}}</b>
-                        {{achievement.description}}
-                    </td>
-                    <td>{{achievement.points}}</td>
-                </tr>
-            </tbody>
-        </table>
+
+    <div class="container" ng-repeat="achievement in achievements">
+
+
+
+
+        <img src="./img/{done}.png">
+
+        <b>{{achievement.name}}</b><br>
+        {{achievement.description}}
+
+        {{achievement.points}}
+
+
     </div>
+</div>
 </div>
 
 <div class="tabContent" id="leaderboard" ng-show="showLeaderboard">

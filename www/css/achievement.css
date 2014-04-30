@@ -1,0 +1,13 @@
+.centerListA{
+    width: 80%;
+    
+}
+.leftListA{
+    padding-right: 20px;
+    padding-top: 20px;
+    width: 10%;
+}
+.rightListA{
+    padding-left: 20px;
+    width: 10%;
+}
