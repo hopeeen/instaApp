@@ -11,6 +11,7 @@ app.controller('manageAccountCTRL', function($scope, daoUser) {
   $scope.showpic = true;
  
  
+ 
   
  $scope.uploadFile = function(files) {
     var fd = new FormData();
