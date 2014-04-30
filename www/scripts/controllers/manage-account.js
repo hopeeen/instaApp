@@ -52,7 +52,6 @@ app.controller('manageAccountCTRL', function($scope, daoUser) {
 
 
     $scope.pushbutton = function() {
-        alert("knappen er trykket!");
         var error = false;
         var errors = new Array();
         $scope.name = $scope.validate($scope.name);
@@ -66,7 +65,6 @@ app.controller('manageAccountCTRL', function($scope, daoUser) {
         var emailpattern = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/
 
         if (error == false) {
-            alert("Knappen trykket, gaar inn i daoUser");
             daoUser.update($scope.name, $scope.email, $scope.description, $scope.newpassword, $scope.oldpassword);
 
 

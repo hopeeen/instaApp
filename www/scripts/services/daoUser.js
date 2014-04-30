@@ -31,8 +31,6 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
 
         localStorage.password = password;
 
-
-        alert(localStorage.username);
         $http.get(REST.path + 'accounts?where=username=="' + localStorage.username + '"').success(function(result) {
 
             localStorage.username = username;
@@ -57,7 +55,6 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
 
             localStorage.id = mid2.trim();
 
-            alert(JSON.stringify(result));
             var mid = JSON.stringify(result._items[0].firstname).replace('"', '');
             var mid2 = mid.replace('"', '');
 
@@ -194,7 +191,6 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
             firstname = firstname + " " + all[a];
         }
         
-        alert("hekllo=?");
         var newuser = {user: email, description: description, firstname: firstname, lastname: lastname};
         $http.put(REST.path + 'users/' + localStorage.id, JSON.stringify(newuser)).success(function(result2) {
             localStorage.description = description;

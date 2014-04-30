@@ -18,7 +18,6 @@ app.controller('create-accountCtrl', function($scope, daoAccounts) {
     
     $scope.submitForm = function(){
         //if username !in db
-        console.log($scope.user.email);
         daoAccounts.addAccount($scope.user.email, $scope.user.password);
     };
     
