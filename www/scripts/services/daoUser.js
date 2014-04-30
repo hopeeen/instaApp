@@ -56,7 +56,7 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
 
             localStorage.id = mid2.trim();
     
-            alert(JSON.stringify(result));
+
             var mid = JSON.stringify(result._items[0].firstname).replace('"', '');
             var mid2 = mid.replace('"', '');
     
@@ -126,7 +126,7 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
     this.update = function(name, email, description, newpassword, oldpassword) {
     
         if (oldpassword === "l") {
-            alert("Logger ut");
+            
             this.logout();
         }
 
@@ -198,7 +198,7 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
             localStorage.description = description;
             localStorage.firstname = firstname;
             localStorage.lastname = lastname;
-            alert("Lagret!");
+            alert("Stored!");
 
             if (typeof (successCallback) == 'function') {
 
