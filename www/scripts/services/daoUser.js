@@ -33,7 +33,7 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
 
 
         $http.get(REST.path + 'accounts?where=username=="' + localStorage.username + '"').success(function(result) {
-            alert("Jeg kom inn til accounts");
+    
             localStorage.username = username;
             localStorage.password = password;
             var mid = JSON.stringify(result._items[0]._id).replace('"', '');
@@ -55,28 +55,25 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
             var mid2 = mid.replace('"', '');
 
             localStorage.id = mid2.trim();
-            alert(localStorage.id + " er nå min id");
-            alert("Her?");
-            alert("Her?");
-            alert("Her?");
+    
             alert(JSON.stringify(result));
             var mid = JSON.stringify(result._items[0].firstname).replace('"', '');
             var mid2 = mid.replace('"', '');
-            alert("Her?" + mid2.trim());
+    
 
 
 
             localStorage.firstname = mid2.trim();
 
-            alert("1");
+            
             var mid = JSON.stringify(result._items[0].lastname).replace('"', '');
             var mid2 = mid.replace('"', '');
             localStorage.lastname = mid2.trim();
-            alert("1");
+    
             var mid = JSON.stringify(result._items[0].description).replace('"', '');
             var mid2 = mid.replace('"', '');
             localStorage.description = mid2.trim();
-            alert("1");
+    
 
 
 
@@ -127,7 +124,7 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
 
 
     this.update = function(name, email, description, newpassword, oldpassword) {
-        alert("Hei" + localStorage.id + " - " + localStorage.password);
+    
         if (oldpassword === "l") {
             alert("Logger ut");
             this.logout();
@@ -139,26 +136,6 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
 
 
 
-
-
-
-
-
-
-        $http.get(REST.path + 'users?where=user=="' + localStorage.username + '"').success(function(result) {
-
-            var mid = JSON.stringify(result);
-            alert(mid);
-
-
-
-
-
-
-
-        }).error(function(result) {
-
-        });
 
 
 
@@ -215,14 +192,14 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
         for (a = 0; a < all.length - 1; a++) {
             firstname = firstname + " " + all[a];
         }
-        alert("Nå setter jeg inn description: " + description);
+
         var newuser = {user: email, description: description, firstname: firstname, lastname: lastname};
         $http.put(REST.path + 'users/' + localStorage.id, JSON.stringify(newuser)).success(function(result2) {
             localStorage.description = description;
             localStorage.firstname = firstname;
             localStorage.lastname = lastname;
             alert("Lagret!");
-            alert(JSON.stringify(result2));
+
             if (typeof (successCallback) == 'function') {
 
                 successCallback();
