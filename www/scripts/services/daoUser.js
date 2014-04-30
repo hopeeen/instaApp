@@ -25,7 +25,7 @@ app.service('daoUser', function($location, $http, $rootScope, REST, Restangular)
         var base64 = CryptoJS.enc.Base64.stringify(words);
         localStorage.userAuth = 'Basic ' + base64;
         localStorage.username = username;
-
+        $rootScope.userNameRoot = username;
         $http.defaults.headers.common.Authorization = localStorage.userAuth;
 
         localStorage.password = password;
