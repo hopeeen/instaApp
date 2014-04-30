@@ -1,6 +1,6 @@
-app.controller('poidetailcontroller', function($scope, $location, $rootScope, $rootParams, dummyData) {
+app.controller('poidetailcontroller', function($scope, $location, $rootScope, $routeParams, dummyData) {
     $scope.showPOIsearchfilter = false;
-    $scope.interest = dummyData.get($rootParams, interest);
+    $scope.interest = dummyData.getInterest($routeParams.interestID);
     
     $scope.selectInterest = function(interest) {
         $rootScope.centerMap = new google.maps.LatLng(interest.coordinates.lat,interest.coordinates.lng);
