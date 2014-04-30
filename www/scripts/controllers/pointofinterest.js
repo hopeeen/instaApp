@@ -1,6 +1,16 @@
 app.controller('poicontroller', function($scope, $location, $rootScope, dummyData) {
     $scope.showPOIsearchfilter = false;
     $scope.interests = dummyData.getInterest();
+    $scope.listPOI = true;
+    $scope.detailPOI = false;
+    
+    $scope.showPoiDetails = function(interest){
+        $scope.listPOI = false;
+        $scope.detailPOI = true;
+        $scope.details = interest;
+    };
+    
+    
     
     $scope.selectInterest = function(interest) {
         $rootScope.centerMap = new google.maps.LatLng(interest.coordinates.lat,interest.coordinates.lng);
