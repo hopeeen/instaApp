@@ -22,7 +22,7 @@ var app = angular.module('myApp', [
                 $routeProvider.when('/pointofinterest', {templateUrl: 'partials/pointofinterest.html', controller: 'poicontroller'});
                 $routeProvider.when('/share', {templateUrl: 'partials/share.html', controller: 'DemoCTRL'});
                 
-                $routeProvider.when('/', {redirectTo: '/mapTest'});
+                $routeProvider.when('/', {redirectTo: '/pointofinterest'});
                 $routeProvider.otherwise({redirectTo: '/404'});
                 
                 RestangularProvider.setBaseUrl('http://instabul.herokuapp.com/');
