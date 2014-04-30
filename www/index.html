@@ -10,7 +10,7 @@
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-     
+
     <body>
         <div class="topcoat-navigation-bar">
             <div class="topcoat-navigation-bar__item left quarter">
@@ -30,20 +30,11 @@
                 </a>
             </div>
         </div>
-        <nav class="side-nav">
+        <nav ng-controller="sideMenuController" class="side-nav">
             <div class="topcoat-list__container side-nav__list__container">
                 <ul id="slideMenu" class="topcoat-list side-nav__list">
                     <li class="topcoat-list__item side-nav__list__item">
                         <a href="#/mapTest" class="side-nav__button">Map</a>
-                    </li>
-                    <li class="topcoat-list__item side-nav__list__item">
-                        <a href="#/login" class="side-nav__button">Login</a>
-                    </li>
-                    <li class="topcoat-list__item side-nav__list__item">
-                        <a href="#/create-account" class="side-nav__button">Create Account</a>
-                    </li>
-                    <li class="topcoat-list__item side-nav__list__item">
-                        <a href="#/achievements" class="side-nav__button">Achievements</a>
                     </li>
                     <li class="topcoat-list__item side-nav__list__item">
                         <a href="#/pointofinterest" class="side-nav__button">Points of Interest</a>
@@ -52,6 +43,26 @@
                         <a href="#/manage-account" class="side-nav__button">Manage Account</a>
                     </li>
                 </ul>
+                <div class="current-active-user" ng-show="userLoggedIn">
+                    <h1>You are logged in!</h1>
+                    <img src="./css/topcoat/img/person-placeholder.jpg"/>
+                    <div id="user-data" class="topcoat-list__container">
+                        <ul class="topcoat-list">
+                            <li class="topcoat-list__item side-nav__list__item">
+                                <a href="#/manage-account" class="side-nav__button">Manage Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="topcoat-button" ng-click="signOut()">Sign out</button>
+                </div>
+                <div ng-show="!userLoggedIn">
+                    <a href="#/login">
+                        <button class="topcoat-button">Log in</button>
+                    </a>
+                    <a href="#/create-account">
+                        <button class="topcoat-button">Register</button>
+                    </a>
+                </div>
             </div>
         </nav>
         <div ng-view class="main-content">
@@ -74,9 +85,9 @@
         <script src="lib/angular/angular-route.js"></script>
         <script src="lib/angular/angular-resource.js"></script>
         <script src="lib/angular/restangular.js"></script>
-        
+
         <script src="lib/angular/lodash.min.js"></script>
-        
+
         <script src="lib/CryptoJS/components/core-min.js"></script>
         <script src="lib/CryptoJS/components/enc-base64-min.js"></script>
         <script src="scripts/app.js"></script>
@@ -102,7 +113,7 @@
         <script src="scripts/directives/ui-map.js"></script>
         <script src="scripts/directives/ui-utils.js"></script>
         <script src="scripts/directives/SocialSharing.js"></script>
-        
+
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
 
     </body>
