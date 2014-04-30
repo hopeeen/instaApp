@@ -1,8 +1,12 @@
 
 app.controller('manageAccountCTRL', function($scope, daoUser) {
   $scope.name = localStorage.firstname + " " + localStorage.lastname;
+  if($scope.name === "undefined undefined"){
+      $scope.name = "";
+  }
   $scope.email = localStorage.username;
   $scope.description = localStorage.description;
+  
   $scope.showname = true;
   $scope.showemail = true;
   $scope.showdesc = true;
@@ -71,14 +75,14 @@ alert("File uploaded!");
           errors.push("Name is invalid");
       }
       if(emailpattern.test($scope.email) === false){
-          alert("Email feil" + $scope.email);
+   
           error = true;
           errors.push("Invalid email");
       }
       
       
       if(error == false){
-   alert("First");
+   
           daoUser.update($scope.name, $scope.email, $scope.description, $scope.newpassword, $scope.oldpassword);
   
           
