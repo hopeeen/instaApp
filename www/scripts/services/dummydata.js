@@ -281,7 +281,20 @@
                         }];
                     return exercises;
                 },
-                
+                getAchievements: function(){
+                  var achievements = [{name: 'The swimmer', points: '100', description: 'Take a swim somewhere in Istanbul.'},
+                      {name: 'Beerlover', points: '10', description: 'Drink a beer!' },
+                      {name: 'Kebabking', points: '10', description: 'Eat a kebab!'},
+                      {name: 'Yoghurtmaster', points: '10', description: 'Eat or drink a Yoghurt!'},
+                      {name: 'Blue Moskue', points: '15', description: 'Visit the famous Blue Mosque.'},
+                      {name: 'Taksim', points: '10', description: 'Visit Taksim Square.'},
+                      {name: 'The king of Efes', points: '20', description: 'Drink all the Efes!'},
+                      {name: 'Bosphorus bridge', points: '10', description: 'Visit the Bosphorus bridge.'},
+                      {name: 'Asia or Europe? Guess Ill do both.', points: '30', description: 'Visit both Asia and Europe at the same day.'}
+                    
+                    ];
+                  return achievements;
+                },
                 getElements: function() {
                     var queueElement = [
                         
