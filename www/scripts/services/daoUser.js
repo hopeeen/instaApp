@@ -1,4 +1,4 @@
-app.service('daoUser', function($location, $http, REST, Restangular) {
+app.service('daoUser', function($location, $http, $rootScope, REST, Restangular) {
   //loggedIn is used in a view and must therefore be either an object
   //or an array to be automatically updated
   var loggedIn = {};
@@ -8,6 +8,7 @@ app.service('daoUser', function($location, $http, REST, Restangular) {
   }
   if ('userAuth' in localStorage) {
     $http.defaults.headers.common.Authorization = localStorage.userAuth;
+    $rootScope.userLoggedIn = true;
   }
 
   this.getLoggedIn = function() {
@@ -53,6 +54,7 @@ localStorage.firstname = mid2.trim();
 
     $http.get(REST.path + 'auth').success(function(result) {
       localStorage.userRole = result;
+      $rootScope.userLoggedIn = true;
       loggedIn.value = true;
       if (typeof (successCallback) == 'function') {
         successCallback();
@@ -71,6 +73,7 @@ localStorage.firstname = mid2.trim();
     localStorage.clear();
     delete $http.defaults.headers.common.Authorization;
     loggedIn.value = false;
+    $rootScope.userLoggedIn = false;
     $location.path("/login");
   };
   
