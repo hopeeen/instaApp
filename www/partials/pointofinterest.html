@@ -1,45 +1,41 @@
-
-
-<br>
+<link rel="stylesheet" href="css/pointofinterest.css"/>
 <div ng-show="listPOI">
-    <div style="padding-left:1%;padding-right: 1%;">
-        <input class="searchfield topcoat-search-input" ng-model="searchText" placeholder="Insert like words or something..." style="width:100%;">
+    <div class="topcoat-list__container">
+    <div id="poi-search">
+        <input class="searchfield topcoat-search-input" ng-model="searchText" placeholder="Search for POIs" style="width:100%;">
     </div>
-    
-    <div ng-repeat="interest in interests| filter:searchText | orderBy:'interestRating' " class="interests">
-        <table class="interest" width="100%" ng-click="showPoiDetails(interest)">
-            <tr>
-                <th><div class="container"><img ng-src="{{'./img/interests/' + interest.category + '.png'}}"/></div></th>
-            <th align="left"><b>{{interest.name}}</b> <br> <i>{{interest.location}}</i></th>
-            </tr>
-            <tr>
-
-                <td align="middle" colspan="2">Rating:{{interest.rating}} / 10<br>
-                    <hr>
-                </td>
-            </tr>
-        </table>
+    <div class="topcoat-list__container" ng-repeat="interest in interests| filter:searchText | orderBy:'interestRating' ">
+        <ul class="topcoat-list" ng-click="showPoiDetails(interest)">
+            <li class="topcoat-list__item">
+                <div class="poi-list-container">
+                    <img ng-src="{{'./img/interests/' + interest.imgname + '.jpg'}}"/>
+                    <h3>{{interest.name}}, {{interest.location}}</h3> 
+                </div>
+                <div>Rating:{{interest.rating}} / 10</div>
+            </li>
+        </ul>
     </div>
+</div>
 </div>
 <div ng-show="detailPOI">
     <div style="text-align: center;">
-    <div style=" margin-top:3%;">
-        {{details.interestName}}
+        <div style=" margin-top:3%;">
+            {{details.interestName}}
+        </div>
+        <div id="poi-page">
+            <img ng-src="{{'./img/interests/' + details.imgname + '.jpg'}}"/>
+        </div>
+        <div>
+            <div ng-click="selectInterest(details)">GoToMap</div>
+
+            Rating:{{details.interestRating}} / 10
+        </div>
+        <div>
+            Description
+        </div>
+        <div>
+            {{details.details}}
+        </div>
     </div>
-    <div>
-        <img ng-src="{{'./img/interests/' + details.imgname + '.png'}}"/>
-    </div>
-    <div>
-         <div ng-click="selectInterest(details)">GoToMap</div>
-      
-        Rating:{{details.interestRating}} / 10
-    </div>
-    <div>
-        Description
-    </div>
-    <div>
-        {{details.details}}
-    </div>
-</div>
-    
+
 </div>

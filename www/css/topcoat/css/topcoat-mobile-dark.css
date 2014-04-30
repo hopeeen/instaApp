@@ -1588,7 +1588,7 @@ input[type="checkbox"]:disabled:active + .topcoat-checkbox__checkmark:before {
 .topcoat-list__item {
   padding: 1.25rem;
   border-top: 1px solid #616363;
-  border-bottom: 1px solid #333434;
+  /* border-bottom: 1px solid #333434; */
 }
 
 .topcoat-list__item:first-child {

@@ -7,6 +7,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'mosque',
+                            imgname: 'blueMosque',
                             coordinates: {
                                 lat: 63.40850844459906,
                                 lng: 10.4425048828125
@@ -19,6 +20,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'museum',
+                            imgname: 'landWallsOfTheodosius',
                             coordinates: {
                                 lat: 41.027500,
                                 lng: 28.975902
@@ -32,6 +34,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'mosque',
+                            imgname: 'suleymaniyeCamii',
                             coordinates: {
                                 lat: 41.047293,
                                 lng: 28.937795
@@ -44,6 +47,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'palace',
+                            imgname: 'topkapiPalace',
                             coordinates: {
                                 lat: 41.013000,
                                 lng: 28.984000
@@ -56,6 +60,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'mosque',
+                            imgname: 'stIreneChurch',
                             coordinates: {
                                 lat: 41.016952,
                                 lng: 28.972136
@@ -70,6 +75,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'museum',
+                            imgname: 'istanbulModern',
                             coordinates: {
                                 lat: 41.026330,
                                 lng: 28.983963
@@ -84,6 +90,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'museum',
+                            imgname: 'Maiden_tower',
                             coordinates: {
                                 lat: 41.021122,
                                 lng: 29.004111
@@ -97,6 +104,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'park',
+                            imgname: 'Emirgan_04325',
                             coordinates: {
                                 lat: 41.108333,
                                 lng: 29.052500
@@ -111,6 +119,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'park',
+                            imgname: 'aquarium',
                             coordinates: {
                                 lat: 41.045459,
                                 lng: 28.896018
@@ -125,6 +134,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'museum',
+                            imgname: 'toy_museum',
                             coordinates: {
                                 lat: 40.976170,
                                 lng: 29.070061
@@ -139,6 +149,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'museum',
+                            imgname: 'rumeli',
                             coordinates: {
                                 lat: 41.085800,
                                 lng: 29.055983
@@ -153,6 +164,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'museum',
+                            imgname: 'miniaturk',
                             coordinates: {
                                 lat: 41.060042,
                                 lng: 28.948603
@@ -167,6 +179,7 @@
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'church',
+                            imgname: 'ayaSofya',
                             coordinates: {
                                 lat: 41.016864,
                                 lng: 28.947042
@@ -179,6 +192,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'mosque',
+                            imgname: 'yeditepe',
                             coordinates: {
                                 lat: 40.97367726477833,
                                 lng: 29.153079986572266
@@ -192,6 +206,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'museum',
+                            imgname: 'rahmi',
                             coordinates: {
                                 lat: 41.042664,
                                 lng: 28.949263
@@ -206,6 +221,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'mosque',
+                            imgname: 'suleymaniyeCamii',
                             coordinates: {
                                 lat: 41.029071,
                                 lng: 28.939828
@@ -219,6 +235,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'mosque',
+                            imgname: 'rushtem',
                             coordinates: {
                                 lat: 41.017509,
                                 lng: 28.968551
@@ -232,6 +249,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'museum',
+                            imgname: 'kariyeMuseum',
                             coordinates: {
                                 lat: 41.031624,
                                 lng: 28.937956
@@ -244,6 +262,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'museum',
+                            imgname: 'hagia_sofia',
                             coordinates: {
                                 lat: 45.770142,
                                 lng: 126.627254
@@ -256,6 +275,7 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'museum',
+                            imgname: 'basilicaCistern',
                             coordinates: {
                                 lat: 41.008385,
                                 lng: 28.977945
@@ -269,33 +289,20 @@
                             location: 'Istanbul',
                             rating: '11.0',
                             category: 'museum',
+                            imgname: 'sakip',
                             coordinates: {
                                 lat: 41.099176,
                                 lng: 29.053683
                             },
                             details: 'Excellent museum.'
                         },
-                        
-                        
-                        
-                           {
-                            name: 'Sakip Sabanci Museum',
-                            location: 'Istanbul',
-                            rating: '11.0',
-                            category: 'museum',
-                            coordinates: {
-                                lat: 41.099176,
-                                lng: 29.053683
-                            },
-                            details: 'Excellent museum.'
-                        },
-                        
                         
                         {
                             name: 'Bridge to Asia',
                             location: 'Istanbul',
                             rating: '5.0',
                             category: 'bridge',
+                            imgname: 'bosphorus',
                             coordinates: {
                                 lat: 41.04540766204396,
                                 lng: 29.034419059753418
