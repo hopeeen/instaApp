@@ -1,7 +1,5 @@
-
-
-        app.controller('achievementsctrl', function($scope) {
-  
+app.controller('achievementsctrl', function($scope, dummyData) {
+  $scope.achievements = dummyData.getAchievements();
         $scope.showMA = true;
         $scope.showLOA = false;
         $scope.showLeaderboard = false;

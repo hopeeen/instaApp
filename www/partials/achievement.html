@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="../img/{done}.png"></td>
+                    <td><img src="./img/done.png"></td>
                     <td>{{achievement.name}}</td>
                     <td>{{achievement.points}}</td>
                 </tr>
@@ -46,7 +46,7 @@
 
     <h1>List of Achievements</h1>
 
-    <div class="container" ng-repeat="achievement in achievement">
+    <div class="container" ng-repeat="achievement in achievements">
         <table class="table table-striped table-hover ">
             <thead>
                 <tr>
@@ -57,9 +57,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="../img/{done}.png"></td>
+                    <td><img src="./img/{done}.png"></td>
                     <td>
-                        <b>{{achievement.name}}</b>
+                        <b>{{achievement.name}}</b><br>
                         {{achievement.description}}
                     </td>
                     <td>{{achievement.points}}</td>
